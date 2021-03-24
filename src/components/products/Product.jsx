@@ -1,0 +1,46 @@
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { addToCart, decreaseCart } from "../../store/slices/productsSlice";
+
+import { Link } from "react-router-dom";
+
+const Product = ({ product }) => {
+  const dispatch = useDispatch();
+
+  return (
+    <>
+      <div className="product">
+        <img src={product.image} alt="" />
+        <p className="product-desc">{product.desc}</p>
+        <p className="product-name">{product.title}</p>
+        <p className="product-price">
+          <sup>ksh</sup>
+          {product.price}
+        </p>
+        <div className="product-cta">
+          <button className="minus" onClick={() => dispatch(decreaseCart(product))}>-</button>
+          <Link to="/cart">
+            <button className="cart-cta">
+              <span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  className="bi bi-cart-fill"
+                  viewBox="0 0 16 16"
+                >
+                  <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+                </svg>
+              </span>
+              <span className="count">{product.cartQuantity}</span>
+            </button>
+          </Link>
+          <button  className="add" onClick={() => dispatch(addToCart(product))}>+</button>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default Product;
