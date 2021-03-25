@@ -1,12 +1,52 @@
-.hero-section{
-    min-height: 90vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background: green;
-    color: #fff
+.hero-section {
+  min-height: 80vh;
+  width: 100%;
+  margin: 4rem auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
 }
-.hero-section h2{
-    font-size: 40px;
+.hero-section h2 {
+  font-size: 40px;
+}
+.hero-text {
+  text-align: center;
+  flex: 1;
+}
+.hero-text .new-arrivals {
+  font-size: 35px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+.hero-text .special-offer {
+  font-size: 55px;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-top: 0.9rem;
+}
+.hero-text button {
+  background: white;
+  outline: none;
+  color: rgb(0, 72, 255);
+  border: 2px solid rgb(0, 72, 255);
+  padding: 0.9rem 1.5rem;
+  font-size: 15px;
+  text-transform: uppercase;
+  font-weight: 500;
+  border-radius: 3px;
+  margin-top: 0.9rem;
+}
+.hero-text button:hover {
+  background: rgb(0, 72, 255);
+  color: white;
+}
+.hero-slider {
+  flex: 1;
+}
+.hero-slider img {
+  margin: auto;
+  height: auto;
+  border-radius: 20px;
+  width: 40vw;
 }
