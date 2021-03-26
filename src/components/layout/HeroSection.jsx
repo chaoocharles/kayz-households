@@ -13,7 +13,7 @@ import {
 import "bootstrap-css-only/css/bootstrap.min.css";
 // import "mdbreact/dist/css/mdb.css";
 
-import pot8 from "../../assets/images/products/pot-and-pans-set-8.png";
+import cups2 from "../../assets/images/products/cups-2.jpg";
 import pot3 from "../../assets/images/products/pot-and-pans-set-3.jpg";
 import cups4 from "../../assets/images/products/cups-4.jpg";
 
@@ -24,6 +24,7 @@ const HeroSection = () => {
         <div className="hero-text">
           <h2 className="new-arrivals">New Arrivals</h2>
           <h2 className="special-offer">Special Offer</h2>
+          <h2 className="off">40% Off</h2>
           <button>Shop Now</button>
         </div>
         <div className="hero-slider">
@@ -39,7 +40,7 @@ const HeroSection = () => {
               <MDBCarouselInner>
                 <MDBCarouselItem itemId="1">
                   <MDBView>
-                    <img className="d-block" src={pot8} alt="First slide" />
+                    <img className="d-block" src={cups2} alt="First slide" />
                     {/* <MDBMask overlay="black-light" /> */}
                   </MDBView>
                   <MDBCarouselCaption>
