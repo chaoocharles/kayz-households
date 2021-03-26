@@ -24,7 +24,7 @@ const HeroSection = () => {
         <div className="hero-text">
           <h2 className="new-arrivals">New Arrivals</h2>
           <h2 className="special-offer">Special Offer</h2>
-          <h2 className="off">40% Off</h2>
+          <h2 className="off">Up to 40% OFF</h2>
           <button>Shop Now</button>
         </div>
         <div className="hero-slider">
