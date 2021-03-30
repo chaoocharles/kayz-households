@@ -23,7 +23,7 @@ const HeroSection = () => {
       <div className="hero-section">
         <div className="hero-text">
           <h2 className="new-arrivals">New Arrivals</h2>
-          <h2 className="special-offer">Special Offer</h2>
+          <h2 className="special-offer">Special Offer.</h2>
           <h2 className="off">Up to 40% OFF</h2>
           <button>Shop Now</button>
         </div>
@@ -32,7 +32,7 @@ const HeroSection = () => {
             <MDBCarousel
               activeItem={1}
               length={3}
-              showControls={false}
+              showControls={true}
               showIndicators={false}
               className="z-depth-1"
               slide

@@ -103,13 +103,13 @@
 .cart-totals .clear-cart:hover {
   background: rgb(255, 74, 74);
 }
-.cart-totals a {
+.cart-container a {
   text-decoration: none;
   color: gray;
   margin-bottom: 0.9rem;
-  display: flex;
-  align-items: flex-start;
+  display: flex !important;
+  align-items: center !important;
 }
-.cart-totals a span {
+.cart-container a span {
   margin-right: 0.2rem;
 }

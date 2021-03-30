@@ -10,7 +10,7 @@ const NavBar = () => {
     <>
       <nav>
         <div className="nav-links">
-          <Link to="/">Kayz Households</Link>
+          <Link to="/" onClick={() => window.scrollTo(0, 0)}>Kayz Households</Link>
           <a href="#">
             <span className="center-items-v">
               <svg
@@ -74,7 +74,7 @@ const NavBar = () => {
           </a>
         </div>
         <div className="cart">
-          <Link to="/cart">
+          <Link to="/cart" onClick={() => window.scrollTo(0, 0)}>
             <span className="center-items-v">
               <svg
                 xmlns="http://www.w3.org/2000/svg"

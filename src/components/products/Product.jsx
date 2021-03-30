@@ -18,8 +18,13 @@ const Product = ({ product }) => {
           {product.price}
         </p>
         <div className="product-cta">
-          <button className="minus" onClick={() => dispatch(decreaseCart(product))}>-</button>
-          <Link to="/cart">
+          <button
+            className="minus"
+            onClick={() => dispatch(decreaseCart(product))}
+          >
+            -
+          </button>
+          <Link to="/cart" onClick={() => window.scrollTo(0, 0)}>
             <button className="cart-cta">
               <span>
                 <svg
@@ -36,7 +41,9 @@ const Product = ({ product }) => {
               <span className="count">{product.cartQuantity}</span>
             </button>
           </Link>
-          <button  className="add" onClick={() => dispatch(addToCart(product))}>+</button>
+          <button className="add" onClick={() => dispatch(addToCart(product))}>
+            +
+          </button>
         </div>
       </div>
     </>

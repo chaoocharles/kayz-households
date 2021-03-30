@@ -5,30 +5,39 @@
   padding: 0 2rem;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
-  background: radial-gradient(52.89% 87.51% at 64.58% 54.35%,#eceeff 0,#b3b6f5 100%);
+  justify-content: space-around;
+  background: radial-gradient(
+    52.89% 87.51% at 64.58% 54.35%,
+    #eceeff 0,
+    #b3b6f5 100%
+  );
 }
 .hero-section h2 {
   font-size: 40px;
 }
 .hero-text {
-  text-align: center;
   flex: 1;
+  color: #2f1c6a;
+  text-align: center;
+  animation-name: bounceInUp;
+  animation-name: bounceInUp;
+  animation-duration: 1s;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  animation-fill-mode: both;
+  
 }
 .hero-text .new-arrivals {
-  font-size: 35px;
-  font-weight: 400;
-  text-transform: uppercase;
+  font-size: 50px;
+  font-weight: 700;
 }
 .hero-text .special-offer {
-  font-size: 55px;
-  font-weight: 500;
-  text-transform: uppercase;
+  font-size: 50px;
+  font-weight: 700;
   margin-top: 0.9rem;
-  line-height: 1;
 }
 .hero-text .off {
-  font-size: 45px;
+  font-size: 35px;
   font-weight: 500;
   margin-top: 0.9rem;
 }
@@ -50,10 +59,79 @@
 }
 .hero-slider {
   flex: 1;
+  animation-name: bounceInUp;
+  animation-name: bounceInUp;
+  animation-duration: 1s;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  animation-fill-mode: both;
 }
 .hero-slider img {
   margin: auto;
   height: auto;
-  border-radius: 20px;
   width: 40vw;
+}
+@keyframes bounceInUp {
+  0%,
+  60%,
+  75%,
+  90%,
+  100% {
+    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 3000px, 0);
+    transform: translate3d(0, 3000px, 0);
+  }
+  60% {
+    opacity: 1;
+    transform: translate3d(0, -20px, 0);
+    transform: translate3d(0, -20px, 0);
+  }
+  75% {
+    transform: translate3d(0, 10px, 0);
+    transform: translate3d(0, 10px, 0);
+  }
+  90% {
+    transform: translate3d(0, -5px, 0);
+    transform: translate3d(0, -5px, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes bounceInUp {
+  0%,
+  60%,
+  75%,
+  90%,
+  100% {
+    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 3000px, 0);
+    transform: translate3d(0, 3000px, 0);
+  }
+  60% {
+    opacity: 1;
+    transform: translate3d(0, -20px, 0);
+    transform: translate3d(0, -20px, 0);
+  }
+  75% {
+    transform: translate3d(0, 10px, 0);
+    transform: translate3d(0, 10px, 0);
+  }
+  90% {
+    transform: translate3d(0, -5px, 0);
+    transform: translate3d(0, -5px, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
 }
