@@ -16,6 +16,7 @@ const ListProducts = () => {
   return (
     <>
       <div className="products-container">
+        <h2 class="products-new-arrival">New Arrivals</h2>
         <div className="products-grid">
           {products &&
             products.map((product) => (
