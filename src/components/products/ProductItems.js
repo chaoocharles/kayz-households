@@ -34,38 +34,6 @@ const ProductItems = [
     image: pot,
     cartQuantity: 0,
   },
-  {
-    id: 5,
-    title: "Pots and Pans Set 2",
-    desc: "Red",
-    price: 499.99,
-    image: pot,
-    cartQuantity: 0,
-  },
-  {
-    id: 6,
-    title: "Pots and Pans Set 3",
-    desc: "Red",
-    price: 699.99,
-    image: pot,
-    cartQuantity: 0,
-  },
-  {
-    id: 7,
-    title: "Pots and Pans Set 2",
-    desc: "Red",
-    price: 499.99,
-    image: pot,
-    cartQuantity: 0,
-  },
-  {
-    id: 8,
-    title: "Pots and Pans Set 3",
-    desc: "Red",
-    price: 699.99,
-    image: pot,
-    cartQuantity: 0,
-  },
 ];
 
 export default ProductItems;

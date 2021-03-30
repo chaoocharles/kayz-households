@@ -23,6 +23,13 @@ const ListProducts = () => {
               <Product key={product.id} product={product} />
             ))}
         </div>
+        <h2 class="products-special-offer">Special Offer</h2>
+        <div className="products-grid">
+          {products &&
+            products.map((product) => (
+              <Product key={product.id} product={product} />
+            ))}
+        </div>
       </div>
     </>
   );
