@@ -94,19 +94,17 @@
 @media (max-width: 480px) {
   /* Hero Section */
   .hero-text .new-arrivals {
-    font-size: 40px;
+    font-size: 35px;
   }
   .hero-text .special-offer {
-    font-size: 40px;
+    font-size: 35px;
   }
   .hero-text .off {
     font-size: 25px;
   }
   .hero-slider img {
+    margin: 2rem 0;
     width: 50vw;
-  }
-  .hero-section{
-    padding-top: 9rem;
   }
   .hero-slider img {
     width: 70vw;
