@@ -21,7 +21,7 @@ const CartContainer = () => {
   return (
     <>
       <div className="cart-container">
-        <h2>Cart - {cartTotalQuantity} Items</h2>
+        <h2>Cart - {cartTotalQuantity} Item(s)</h2>
         {cartItems.length === 0 ? (
           <div>
             <p>Your cart is currently empty!</p>

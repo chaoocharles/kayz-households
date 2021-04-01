@@ -69,7 +69,50 @@
   margin: auto;
   height: auto;
   width: 40vw;
+  border-radius: 20px;
 }
+
+@media (max-width: 768px) {
+  /* Hero Section */
+  .hero-section{
+    flex-direction: column;
+    padding-top: 6rem;
+  }
+  .hero-text .new-arrivals {
+    font-size: 45px;
+  }
+  .hero-text .special-offer {
+    font-size: 45px;
+  }
+  .hero-text .off {
+    font-size: 30px;
+  }
+  .hero-slider img {
+    width: 50vw;
+  }
+}
+@media (max-width: 480px) {
+  /* Hero Section */
+  .hero-text .new-arrivals {
+    font-size: 40px;
+  }
+  .hero-text .special-offer {
+    font-size: 40px;
+  }
+  .hero-text .off {
+    font-size: 25px;
+  }
+  .hero-slider img {
+    width: 50vw;
+  }
+  .hero-section{
+    padding-top: 9rem;
+  }
+  .hero-slider img {
+    width: 70vw;
+  }
+}
+
 @keyframes bounceInUp {
   0%,
   60%,

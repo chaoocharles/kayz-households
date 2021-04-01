@@ -7,7 +7,7 @@ nav {
   justify-content: space-between;
   position: fixed;
   top: 0;
-  z-index: 99;
+  z-index: 98;
 }
 .nav-links a,
 .cart a {
@@ -16,10 +16,10 @@ nav {
   color: rgb(245, 245, 245);
   font-size: 14px;
   display: inline-block;
+  text-transform: uppercase;
 }
 .nav-links a:hover,
 .cart a:hover {
-  text-decoration: underline;
   color: rgb(220, 220, 220);
 }
 .center-items-v {
@@ -51,4 +51,22 @@ nav {
   justify-content: center;
   border: none;
   outline: none;
+}
+.logo {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  /* Nav */
+  .nav-links {
+    display: none;
+  }
+  .social-links {
+    display: none;
+  }
+  nav {
+    padding: 1.2rem;
+  }
 }

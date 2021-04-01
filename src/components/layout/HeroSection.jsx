@@ -1,5 +1,6 @@
 import React from "react";
 import "./HeroSection.css";
+import { motion } from "framer-motion";
 import {
   MDBCarousel,
   MDBCarouselCaption,
@@ -25,7 +26,9 @@ const HeroSection = () => {
           <h2 className="new-arrivals">New Arrivals.</h2>
           <h2 className="special-offer">Special Offer.</h2>
           <h2 className="off">Up to 40% OFF</h2>
-          <button>Shop Now</button>
+          <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 1.1 }}>
+            Shop Now
+          </motion.button>
         </div>
         <div className="hero-slider">
           <MDBContainer>

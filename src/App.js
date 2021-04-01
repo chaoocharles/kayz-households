@@ -8,7 +8,6 @@ import CartContainer from "./components/cart/CartContainer";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import SliderContainer from "./components/layout/imageSlider/SliderContainer";
 
 function App() {
   return (
@@ -17,7 +16,6 @@ function App() {
         <ToastContainer />
         <NavBar />
         <Switch>
-          <Route path="/slider" component={SliderContainer} />
           <Route path="/cart" component={CartContainer} />
           <Route path="/" component={Home} />
         </Switch>

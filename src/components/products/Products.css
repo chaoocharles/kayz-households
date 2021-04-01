@@ -95,3 +95,14 @@
   font-weight: 300;
   vertical-align: middle;
 }
+
+/* Responsive */
+
+@media (max-width: 768px) {
+  .product img {
+    height: 250px;
+    width: auto;
+    border-radius: 9px;
+  }
+}
+
