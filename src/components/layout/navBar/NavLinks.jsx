@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const NavLinks = () => {
   return (
     <>
-      <a href="#">
+      <Link to="/login">
         <span className="center-items-v">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -18,8 +18,8 @@ const NavLinks = () => {
           </svg>
           <span>Login</span>
         </span>
-      </a>
-      <a href="#">
+      </Link>
+      <Link to="/register">
         <span className="center-items-v">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -33,7 +33,7 @@ const NavLinks = () => {
           </svg>
           <span>Register</span>
         </span>
-      </a>
+      </Link>
       <a href="#">
         <span className="center-items-v">
           <svg

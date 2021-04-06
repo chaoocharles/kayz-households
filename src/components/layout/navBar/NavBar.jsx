@@ -5,6 +5,7 @@ import SideNav from "./SideNav/SideNav";
 import NavLinks from "./NavLinks";
 
 import "./NavBar.css";
+import logo from "../../../assets/kayz-logo.png"
 
 const NavBar = () => {
   const [sideNav, setSideNav] = useState({
@@ -16,7 +17,7 @@ const NavBar = () => {
       <SideNav sideNav={sideNav} setSideNav={setSideNav} />
       <nav>
         <Link className="logo" to="/" onClick={() => window.scrollTo(0, 0)}>
-          Kayz Households
+          <img src={logo} alt="Kayz Households"/>
         </Link>
         <div className="nav-links">
           <NavLinks />

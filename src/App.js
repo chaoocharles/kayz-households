@@ -8,6 +8,8 @@ import CartContainer from "./components/cart/CartContainer";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Login from "./components/auth/Login";
+import Register from "./components/auth/Register";
 
 function App() {
   return (
@@ -16,6 +18,8 @@ function App() {
         <ToastContainer />
         <NavBar />
         <Switch>
+          <Route path="/login" component={Login} />
+          <Route path="/register" component={Register} />
           <Route path="/cart" component={CartContainer} />
           <Route path="/" component={Home} />
         </Switch>

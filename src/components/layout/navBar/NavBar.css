@@ -1,5 +1,6 @@
 nav {
-  background: rgb(185, 1, 1);
+  /* background: rgb(185, 1, 1); */
+  background: rgb(53, 53, 53);
   width: 100vw;
   padding: 1.2rem 4rem;
   display: flex !important;
@@ -52,10 +53,9 @@ nav {
   border: none;
   outline: none;
 }
-.logo {
-  text-decoration: none;
-  text-transform: uppercase;
-  color: white;
+.logo img{
+  height: 3.5rem;
+  width: auto;
 }
 
 @media (max-width: 768px) {
