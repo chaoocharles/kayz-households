@@ -7,7 +7,7 @@ import "./Auth.css"
 
 const Login = () => {
   return (
-    <div className="login-container">
+    <div className="auth-container">
       <h2>Login To Your Account</h2>
       <Formik
         initialValues={{
@@ -21,8 +21,8 @@ const Login = () => {
             password: Yup.string()
             .required('Required')
             .matches(
-              /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!^%*#?&])[A-Za-z\d@$!^%*#?&]{6,}$/,
-              "Must Contain Atleast 6 Characters, One Uppercase, One Lowercase, One Number and One Special Case Character @$!%*#?&"
+              /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*.#?&])[A-Za-z\d@$!%*.#?&]{6,}$/,
+              "Must Contain Atleast 6 Characters, One Uppercase, One Lowercase, One Number and One Special Case Character"
             ),
         })}
         onSubmit={(values, { setSubmitting }) => {
