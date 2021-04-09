@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const NavLinks = () => {
   return (
     <>
-      <Link to="/login">
+      <Link to="/login" onClick={() => window.scrollTo(0, 0)}>
         <span className="center-items-v">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -19,7 +19,7 @@ const NavLinks = () => {
           <span>Login</span>
         </span>
       </Link>
-      <Link to="/register">
+      <Link to="/register" onClick={() => window.scrollTo(0, 0)}>
         <span className="center-items-v">
           <svg
             xmlns="http://www.w3.org/2000/svg"

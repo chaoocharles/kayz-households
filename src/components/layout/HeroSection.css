@@ -88,9 +88,11 @@
   }
   .hero-text .special-offer {
     font-size: 45px;
+    margin-top: 0.3rem;
   }
   .hero-text .off {
     font-size: 30px;
+    margin-top: 0.3rem;
   }
   .hero-slider img {
     width: 50vw;

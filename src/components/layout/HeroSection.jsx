@@ -18,6 +18,19 @@ import cups2 from "../../assets/images/products/cups-2.jpg";
 import pot3 from "../../assets/images/products/pot-and-pans-set-3.jpg";
 import cups4 from "../../assets/images/products/cups-4.jpg";
 
+const handleScroll = () => {
+  const vh = Math.max(
+    document.documentElement.clientHeight || 0,
+    window.innerHeight || 0
+  );
+  window.scrollTo(
+    window.scrollTo({
+      top: vh - 20,
+      behavior: "smooth",
+    })
+  );
+};
+
 const HeroSection = () => {
   return (
     <>
@@ -26,7 +39,11 @@ const HeroSection = () => {
           <h2 className="new-arrivals">New Arrivals.</h2>
           <h2 className="special-offer">Special Offer.</h2>
           <h2 className="off">Up to 40% OFF</h2>
-          <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 1.1 }}>
+          <motion.button
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 1.1 }}
+            onClick={() => handleScroll()}
+          >
             Shop Now
           </motion.button>
         </div>
