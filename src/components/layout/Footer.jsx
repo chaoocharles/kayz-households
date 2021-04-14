@@ -1,19 +1,79 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import "./Footer.css";
+import logo from "../../assets/kayz-logo.png";
 
 const Footer = () => {
   return (
     <>
       <footer>
         <div className="footer-details">
-          <div>
-            <div>Kayz Households</div>
-            <div>Address</div>
+          <div className="address">
+            <Link className="logo" to="/" onClick={() => window.scrollTo(0, 0)}>
+              <img src={logo} alt="Kayz Households" />
+            </Link>
+            <div>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                className="bi bi-geo-alt-fill"
+                viewBox="0 0 16 16"
+              >
+                <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z" />
+              </svg>
+              <span>Nairobi, Kenya</span>
+            </div>
+            <div>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                className="bi bi-envelope-fill"
+                viewBox="0 0 16 16"
+              >
+                <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555zM0 4.697v7.104l5.803-3.558L0 4.697zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757zm3.436-.586L16 11.801V4.697l-5.803 3.546z" />
+              </svg>
+              <span>info@kayzhouseholds.co.ke</span>
+            </div>
+            <div>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                className="bi bi-clock-fill"
+                viewBox="0 0 16 16"
+              >
+                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z" />
+              </svg>
+              <span>All Days, 24/7</span>
+            </div>
           </div>
           <div>
-            <div className="nav-links">
-              <a href="#">
+            <div className="nav-links footer">
+              <h3>Quick Links</h3>
+              <Link to="/cart" onClick={() => window.scrollTo(0, 0)}>
+                <span className="center-items-v">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    className="bi bi-cart-fill"
+                    viewBox="0 0 16 16"
+                  >
+                    <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+                  </svg>
+                  <span>
+                    <span>Cart</span>
+                  </span>
+                </span>
+              </Link>
+              <Link to="/login" onClick={() => window.scrollTo(0, 0)}>
                 <span className="center-items-v">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -27,8 +87,8 @@ const Footer = () => {
                   </svg>
                   <span>Login</span>
                 </span>
-              </a>
-              <a href="#">
+              </Link>
+              <Link to="/register" onClick={() => window.scrollTo(0, 0)}>
                 <span className="center-items-v">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -42,8 +102,8 @@ const Footer = () => {
                   </svg>
                   <span>Register</span>
                 </span>
-              </a>
-              <a href="#">
+              </Link>
+              <a href="#" onClick={() => window.scrollTo(0, 0)}>
                 <span className="center-items-v">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -59,7 +119,7 @@ const Footer = () => {
                   <span>Order History</span>
                 </span>
               </a>
-              <a href="#">
+              <a href="#" onClick={() => window.scrollTo(0, 0)}>
                 <span className="center-items-v">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -74,6 +134,24 @@ const Footer = () => {
                   <span>Shipping</span>
                 </span>
               </a>
+              <Link to="/addproduct" onClick={() => window.scrollTo(0, 0)}>
+                <span className="center-items-v">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    className="bi bi-bag-plus-fill"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M10.5 3.5a2.5 2.5 0 0 0-5 0V4h5v-.5zm1 0V4H15v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4h3.5v-.5a3.5 3.5 0 1 1 7 0zM8.5 8a.5.5 0 0 0-1 0v1.5H6a.5.5 0 0 0 0 1h1.5V12a.5.5 0 0 0 1 0v-1.5H10a.5.5 0 0 0 0-1H8.5V8z"
+                    />
+                  </svg>
+                  <span>Add Product</span>
+                </span>
+              </Link>
             </div>
           </div>
           <div className="social-links">

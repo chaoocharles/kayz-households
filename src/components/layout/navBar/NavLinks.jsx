@@ -34,7 +34,7 @@ const NavLinks = () => {
           <span>Register</span>
         </span>
       </Link>
-      <a href="#">
+      <a href="#" onClick={() => window.scrollTo(0, 0)}>
         <span className="center-items-v">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -50,7 +50,7 @@ const NavLinks = () => {
           <span>Order History</span>
         </span>
       </a>
-      <Link to="/addproduct">
+      <Link to="/addproduct" onClick={() => window.scrollTo(0, 0)}>
         <span className="center-items-v">
           <svg
             xmlns="http://www.w3.org/2000/svg"
