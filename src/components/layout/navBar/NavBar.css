@@ -2,7 +2,7 @@ nav {
   /* background: rgb(185, 1, 1); */
   background: rgb(53, 53, 53);
   width: 100vw;
-  padding: 1.2rem 4rem;
+  padding: 1rem 4rem;
   display: flex !important;
   align-items: center;
   justify-content: space-between;
@@ -11,17 +11,43 @@ nav {
   z-index: 98;
 }
 .nav-links a,
-.cart a {
+.cart a,
+.social-links a {
   text-decoration: none;
   margin-right: 2rem;
   color: rgb(245, 245, 245);
   font-size: 14px;
   display: inline-block;
   text-transform: uppercase;
+  position: relative;
+  padding-bottom: 4px;
 }
 .nav-links a:hover,
-.cart a:hover {
+.cart a:hover,
+.social-links a:hover {
   color: rgb(220, 220, 220);
+  text-decoration: none;
+}
+
+.nav-links a:before,
+.cart a::before, .social-links a::before {
+  content: "";
+  background-color: white;
+  width: 100%;
+  height: 4px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  transition: transform 0.25s cubic-bezier(0, 0.5, 0.5, 1),
+    -webkit-transform 0.25s cubic-bezier(0, 0.5, 0.5, 1),
+    -o-transform 0.25s cubic-bezier(0, 0.5, 0.5, 1);
+  transform: scaleX(0);
+  transform-origin: 100% 0;
+}
+.nav-links a:hover:before,
+.cart a:hover::before, .social-links a:hover::before {
+  transform: scaleX(1);
+  transform-origin: 0 100%;
 }
 .center-items-v {
   display: flex;
@@ -30,15 +56,6 @@ nav {
 .nav-links svg,
 .cart svg {
   margin-right: 5px;
-}
-.social-links a {
-  color: rgb(245, 245, 245);
-  text-decoration: none;
-  font-size: 13px;
-  margin-left: 2rem;
-}
-.social-links a:hover {
-  color: rgb(220, 220, 220);
 }
 .cart-quantity {
   font-size: 12px;
@@ -53,7 +70,7 @@ nav {
   border: none;
   outline: none;
 }
-.logo img{
+.logo img {
   height: 3.5rem;
   width: auto;
 }
@@ -71,7 +88,7 @@ nav {
   }
 }
 @media (max-width: 480px) {
-  .logo img{
+  .logo img {
     height: 2.5rem;
   }
 }

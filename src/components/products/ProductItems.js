@@ -1,4 +1,7 @@
+import pot3 from "../../assets/images/products/pot-and-pans-set-3.jpg";
 import pot from "../../assets/images/products/pot-and-pans-set-0.jpg";
+import cups from "../../assets/images/products/cups-2.jpg";
+import cups4 from "../../assets/images/products/cups-4.jpg";
 
 const ProductItems = [
   {
@@ -11,27 +14,27 @@ const ProductItems = [
   },
   {
     id: 2,
-    title: "Pots and Pans Set 2",
-    desc: "Red",
+    title: "Cups and Plates",
+    desc: "Black",
     price: 499.99,
-    image: pot,
+    image: cups,
     cartQuantity: 0,
   },
   {
     id: 3,
-    title: "Pots and Pans Set 3",
-    desc: "Red",
+    title: "Cups and Plates",
+    desc: "Yellow",
     price: 699.99,
-    image: pot,
+    image: cups4,
     cartQuantity: 0,
   },
   {
     id: 4,
-    title: "Pots and Pans Set 1",
+    title: "Pots and Pans Set 4",
     desc: "Red",
     desc: "Red",
     price: 599.99,
-    image: pot,
+    image: pot3,
     cartQuantity: 0,
   },
 ];

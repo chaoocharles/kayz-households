@@ -10,6 +10,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Login from "./components/auth/Login";
 import Register from "./components/auth/Register";
+import AddProduct from "./components/products/AddProduct";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <ToastContainer />
         <NavBar />
         <Switch>
+          <Route path="/addproduct" component={AddProduct} />
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
           <Route path="/cart" component={CartContainer} />
