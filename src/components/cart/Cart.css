@@ -1,7 +1,7 @@
 .cart-container {
   margin: 7rem auto;
   width: 90vw;
-  min-height: 60vh;
+  min-height: 90vh;
 }
 .cart-content {
   display: flex;

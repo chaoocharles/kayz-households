@@ -13,15 +13,18 @@ footer {
   justify-content: space-between;
 }
 .address div {
-  margin: 0.3rem 0;
+  margin: 0.4rem 0;
 }
 .address svg {
   margin-right: 0.3rem;
 }
 .copyright {
-  text-align: center;
+  padding: .9rem 0;
   font-size: 14px;
   color: rgb(175, 175, 175);
+  border-top: 1px solid white;
+  display: flex;
+  justify-content: space-between;
 }
 
 /* footer nav-links */
@@ -29,13 +32,13 @@ footer {
     display: flex;
     flex-direction: column;
 }
-.nav-links.footer h3{
-    font-size: 16px;
+footer h3{
+    font-size: 15px;
     font-weight: 600px;
     text-transform: uppercase;
 }
 .nav-links.footer a{
     font-size: 14px;
-    margin-bottom: 0.2rem;
+    margin-bottom: 0.4rem;
     text-transform: capitalize;
 }
