@@ -1,30 +1,31 @@
 {
   "files": {
-    "main.css": "/static/css/main.e54b2400.chunk.css",
-    "main.js": "/static/js/main.a3826847.chunk.js",
-    "main.js.map": "/static/js/main.a3826847.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.14742d06.js",
-    "runtime-main.js.map": "/static/js/runtime-main.14742d06.js.map",
+    "main.css": "/static/css/main.f41f0e84.chunk.css",
+    "main.js": "/static/js/main.4e85da7e.chunk.js",
+    "main.js.map": "/static/js/main.4e85da7e.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.6231bedd.js",
+    "runtime-main.js.map": "/static/js/runtime-main.6231bedd.js.map",
     "static/css/2.ec226730.chunk.css": "/static/css/2.ec226730.chunk.css",
-    "static/js/2.82d6b264.chunk.js": "/static/js/2.82d6b264.chunk.js",
-    "static/js/2.82d6b264.chunk.js.map": "/static/js/2.82d6b264.chunk.js.map",
-    "static/js/3.e08efa7f.chunk.js": "/static/js/3.e08efa7f.chunk.js",
-    "static/js/3.e08efa7f.chunk.js.map": "/static/js/3.e08efa7f.chunk.js.map",
+    "static/js/2.a8f50a20.chunk.js": "/static/js/2.a8f50a20.chunk.js",
+    "static/js/2.a8f50a20.chunk.js.map": "/static/js/2.a8f50a20.chunk.js.map",
+    "static/js/3.78506913.chunk.js": "/static/js/3.78506913.chunk.js",
+    "static/js/3.78506913.chunk.js.map": "/static/js/3.78506913.chunk.js.map",
     "index.html": "/index.html",
     "static/css/2.ec226730.chunk.css.map": "/static/css/2.ec226730.chunk.css.map",
-    "static/css/main.e54b2400.chunk.css.map": "/static/css/main.e54b2400.chunk.css.map",
-    "static/js/2.82d6b264.chunk.js.LICENSE.txt": "/static/js/2.82d6b264.chunk.js.LICENSE.txt",
+    "static/css/main.f41f0e84.chunk.css.map": "/static/css/main.f41f0e84.chunk.css.map",
+    "static/js/2.a8f50a20.chunk.js.LICENSE.txt": "/static/js/2.a8f50a20.chunk.js.LICENSE.txt",
     "static/media/cups-2.ff01316d.jpg": "/static/media/cups-2.ff01316d.jpg",
     "static/media/cups-4.dead454a.jpg": "/static/media/cups-4.dead454a.jpg",
     "static/media/kayz-logo.3c436fac.png": "/static/media/kayz-logo.3c436fac.png",
+    "static/media/payment-methods.9b41d9a7.png": "/static/media/payment-methods.9b41d9a7.png",
     "static/media/pot-and-pans-set-0.f314cbe0.jpg": "/static/media/pot-and-pans-set-0.f314cbe0.jpg",
     "static/media/pot-and-pans-set-3.24d2387d.jpg": "/static/media/pot-and-pans-set-3.24d2387d.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.14742d06.js",
+    "static/js/runtime-main.6231bedd.js",
     "static/css/2.ec226730.chunk.css",
-    "static/js/2.82d6b264.chunk.js",
-    "static/css/main.e54b2400.chunk.css",
-    "static/js/main.a3826847.chunk.js"
+    "static/js/2.a8f50a20.chunk.js",
+    "static/css/main.f41f0e84.chunk.css",
+    "static/js/main.4e85da7e.chunk.js"
   ]
 }
