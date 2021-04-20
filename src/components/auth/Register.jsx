@@ -5,7 +5,7 @@ import MyTextInput from "../common/MyTextInput";
 
 const Register = () => {
   return (
-    <div className="auth-container">
+    <div className="form-container">
       <h2>Register For An Account</h2>
       <Formik
         initialValues={{

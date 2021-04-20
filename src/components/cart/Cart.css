@@ -118,6 +118,13 @@
   margin-right: 0.2rem;
 }
 
+.toCheckout a{
+  text-decoration: none;
+  color: white;
+  display: inline-block !important;
+  margin: 0;
+}
+
 @media( max-width: 768px ){
   .cart-container{
     text-align: center;

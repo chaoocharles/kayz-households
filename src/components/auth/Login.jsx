@@ -3,11 +3,11 @@ import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import MyTextInput from "../common/MyTextInput";
 
-import "./Auth.css"
+import "../common/forms.css"
 
 const Login = () => {
   return (
-    <div className="auth-container">
+    <div className="form-container">
       <h2>Login To Your Account</h2>
       <Formik
         initialValues={{

@@ -11,6 +11,7 @@ import "react-toastify/dist/ReactToastify.css";
 import Login from "./components/auth/Login";
 import Register from "./components/auth/Register";
 import AddProduct from "./components/products/AddProduct";
+import Checkout from "./components/cart/Checkout";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="/addproduct" component={AddProduct} />
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
+          <Route path="/cart/checkout" component={Checkout} />
           <Route path="/cart" component={CartContainer} />
           <Route path="/" component={Home} />
         </Switch>
