@@ -31,7 +31,8 @@ nav {
 }
 
 .nav-links a:before,
-.cart a::before, .social-links a::before {
+.cart a::before,
+.social-links a::before {
   content: "";
   background-color: white;
   width: 100%;
@@ -46,7 +47,8 @@ nav {
   transform-origin: 100% 0;
 }
 .nav-links a:hover:before,
-.cart a:hover::before, .social-links a:hover::before {
+.cart a:hover::before,
+.social-links a:hover::before {
   transform: scaleX(1);
   transform-origin: 0 100%;
 }

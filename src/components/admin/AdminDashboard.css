@@ -1,13 +1,11 @@
-.dashboard-container{
-    margin: auto;
-    padding: 5.5rem 0 0 0;
+.dashboard-container {
+  margin: auto;
+  padding: 5.5rem 0 0 0;
 }
-
-.dashboard{
-    display: flex;
-    height: 100vh;
+.dashboard {
+  display: flex;
+  height: 100vh;
 }
-
-.content{
-    padding: 2rem;
+.content {
+  padding: 2rem;
 }

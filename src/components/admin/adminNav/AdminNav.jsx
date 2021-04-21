@@ -26,6 +26,21 @@ const AdminNav = ({ url }) => {
             <span>Dashboard</span>
           </span>
         </Link>
+        <Link to={`${url}`}>
+          <span className="center-items-v">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              className="bi bi-bag-fill"
+              viewBox="0 0 16 16"
+            >
+              <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5z" />
+            </svg>
+            <span>Manage Products</span>
+          </span>
+        </Link>
         <Link to={`${url}/addproduct`}>
           <span className="center-items-v">
             <svg
@@ -42,6 +57,42 @@ const AdminNav = ({ url }) => {
               />
             </svg>
             <span>Add Products</span>
+          </span>
+        </Link>
+        <Link to={`${url}`}>
+          <span className="center-items-v">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              className="bi bi-file-earmark-spreadsheet-fill"
+              viewBox="0 0 16 16"
+            >
+              <path d="M6 12v-2h3v2H6z" />
+              <path d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0zM9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1zM3 9h10v1h-3v2h3v1h-3v2H9v-2H6v2H5v-2H3v-1h2v-2H3V9z" />
+            </svg>
+            <span>Orders</span>
+          </span>
+        </Link>
+        <Link to={`${url}`}>
+          <span className="center-items-v">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              className="bi bi-people-fill"
+              viewBox="0 0 16 16"
+            >
+              <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+              <path
+                fill-rule="evenodd"
+                d="M5.216 14A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216z"
+              />
+              <path d="M4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z" />
+            </svg>
+            <span>Manage Users</span>
           </span>
         </Link>
       </div>
