@@ -32,10 +32,12 @@ const Register = () => {
             ),
           confirmPassword: Yup.string().when("password", {
             is: (val) => (val && val.length > 0 ? true : false),
-            then: Yup.string().oneOf(
-              [Yup.ref("password")],
-              "Both password need to be the same"
-            ),
+            then: Yup.string()
+              .required("Required")
+              .oneOf(
+                [Yup.ref("password")],
+                "Both password need to be the same"
+              ),
           }),
         })}
         onSubmit={(values, { setSubmitting }) => {

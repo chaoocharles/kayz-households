@@ -4,6 +4,11 @@
   margin: auto;
   padding: 9rem 0;
 }
+
+.form-container.addproduct{
+  padding: 1rem 0;
+}
+
 .form-container h2, h3, h4 {
   margin-bottom: 1.5rem;
 }

@@ -9,7 +9,7 @@ const Checkout = () => {
   return (
     <div className="form-container">
       <h2>Checkout</h2>
-      <h4>1. Address Details</h4>
+      <h4>1/2. Address Details</h4>
       <Formik
         initialValues={{
           firstName: "",

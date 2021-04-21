@@ -3,6 +3,7 @@ nav {
   background: rgb(53, 53, 53);
   width: 100vw;
   padding: 1rem 4rem;
+  height: 5.5rem;
   display: flex !important;
   align-items: center;
   justify-content: space-between;

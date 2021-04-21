@@ -6,8 +6,8 @@ import FileBase64 from "react-file-base64";
 
 const AddProduct = () => {
   return (
-    <div className="form-container">
-      <h2>Add a New Product</h2>
+    <div className="form-container addproduct">
+      <h3>Add a New Product</h3>
       <Formik
         initialValues={{
           productTitle: "",

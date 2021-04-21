@@ -10,8 +10,8 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Login from "./components/auth/Login";
 import Register from "./components/auth/Register";
-import AddProduct from "./components/products/AddProduct";
 import Checkout from "./components/cart/Checkout";
+import AdminDashboard from "./components/admin/AdminDashboard"
 
 function App() {
   return (
@@ -20,7 +20,7 @@ function App() {
         <ToastContainer />
         <NavBar />
         <Switch>
-          <Route path="/addproduct" component={AddProduct} />
+          <Route path="/admin-dashboard" component={AdminDashboard} />
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
           <Route path="/cart/checkout" component={Checkout} />

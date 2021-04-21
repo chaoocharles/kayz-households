@@ -50,22 +50,19 @@ const NavLinks = () => {
           <span>Order History</span>
         </span>
       </a>
-      <Link to="/addproduct" onClick={() => window.scrollTo(0, 0)}>
+      <Link to="/admin-dashboard" onClick={() => window.scrollTo(0, 0)}>
         <span className="center-items-v">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="16"
             height="16"
             fill="currentColor"
-            className="bi bi-bag-plus-fill"
+            className="bi bi-file-person-fill"
             viewBox="0 0 16 16"
           >
-            <path
-              fill-rule="evenodd"
-              d="M10.5 3.5a2.5 2.5 0 0 0-5 0V4h5v-.5zm1 0V4H15v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4h3.5v-.5a3.5 3.5 0 1 1 7 0zM8.5 8a.5.5 0 0 0-1 0v1.5H6a.5.5 0 0 0 0 1h1.5V12a.5.5 0 0 0 1 0v-1.5H10a.5.5 0 0 0 0-1H8.5V8z"
-            />
+            <path d="M12 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm-1 7a3 3 0 1 1-6 0 3 3 0 0 1 6 0zm-3 4c2.623 0 4.146.826 5 1.755V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-1.245C3.854 11.825 5.377 11 8 11z" />
           </svg>
-          <span>Add Product</span>
+          <span>Admin</span>
         </span>
       </Link>
     </>
