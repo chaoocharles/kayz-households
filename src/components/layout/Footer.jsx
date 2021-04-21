@@ -251,7 +251,7 @@ const Footer = () => {
           <div>
             <img src={mpesa} width="150px" alt="mpesa logo" />
           </div>
-          <div>
+          <div class="payment-methods">
             <img src={paymentMethods} alt="payment methods" />
           </div>
         </div>

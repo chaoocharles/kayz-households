@@ -20,7 +20,7 @@ const CartContainer = () => {
 
   return (
     <>
-      <div className="form-container">
+      <div className="cart-container">
         <h2>Cart - {cartTotalQuantity} Item(s)</h2>
         {cartItems.length === 0 ? (
           <div>

@@ -42,3 +42,32 @@ footer h3{
     margin-bottom: 0.4rem;
     text-transform: capitalize;
 }
+
+/* Responssive */
+@media (max-width: 768px) {
+  .footer-details{
+    flex-direction: column;
+    justify-content: center;
+  }
+  .address{
+    margin: 2rem 0;
+  }
+  .nav-links{
+    margin-bottom: 2rem ;
+  }
+  .nav-links.nav-links.footer{
+    align-items: flex-start;
+  }
+.copyright{
+  flex-direction: column-reverse;
+  height: 11rem;
+}
+.copyright .payment-methods img{
+max-width: 60vw;
+}
+
+}
+
+@media (max-width: 480px) {
+
+}

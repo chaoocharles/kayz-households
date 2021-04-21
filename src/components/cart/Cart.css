@@ -29,6 +29,7 @@
 .cart-item img {
   height: 70px;
   width: auto;
+  margin-right: 0.5rem;
 }
 .item-name {
   margin: 0;
