@@ -7,12 +7,10 @@ import {
   MDBCarouselInner,
   MDBCarouselItem,
   MDBView,
-  MDBMask,
   MDBContainer,
 } from "mdbreact";
 
 import "bootstrap-css-only/css/bootstrap.min.css";
-// import "mdbreact/dist/css/mdb.css";
 
 import cups2 from "../../assets/images/products/cups-2.jpg";
 import pot3 from "../../assets/images/products/pot-and-pans-set-3.jpg";

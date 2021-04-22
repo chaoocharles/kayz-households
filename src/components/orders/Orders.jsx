@@ -8,4 +8,4 @@ const Orders = () => {
   );
 };
 
-export default ManageProducts;
+export default Orders;

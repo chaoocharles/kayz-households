@@ -9,7 +9,7 @@ const ListProducts = () => {
   const products = useSelector((state) => state.products.productItems);
   const dispatch = useDispatch()
 
-  React.useEffect(() => {
+  useEffect(() => {
     dispatch(getTotals());
   }, [products, dispatch]);
 

@@ -20,10 +20,22 @@ const AdminDashboard = () => {
           <div className="content">
             <Switch>
               <Route exact path={path} component={Dashboard} />
-              <Route exact path={`${path}/manageproducts`} component={ManageProducts} />
+              <Route
+                exact
+                path={`${path}/manageproducts`}
+                component={ManageProducts}
+              />
               <Route exact path={`${path}/addproduct`} component={AddProduct} />
-              <Route exact path={`${path}/manageorders`} component={ManageOrders} />
-              <Route exact path={`${path}/manageusers`} component={ManageUsers} />
+              <Route
+                exact
+                path={`${path}/manageorders`}
+                component={ManageOrders}
+              />
+              <Route
+                exact
+                path={`${path}/manageusers`}
+                component={ManageUsers}
+              />
             </Switch>
           </div>
         </div>
