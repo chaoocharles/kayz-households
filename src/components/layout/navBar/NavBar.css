@@ -74,8 +74,9 @@ nav {
   outline: none;
 }
 .logo img {
-  height: 3.5rem;
+  height: 3.7rem;
   width: auto;
+  margin-right: 0.7rem ;
 }
 
 @media (max-width: 768px) {
