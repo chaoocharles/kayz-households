@@ -1,5 +1,5 @@
 .hero-section {
-  min-height: 100vh;
+  min-height: 90vh;
   width: 100%;
   margin: auto;
   padding: 0 2rem;
@@ -76,7 +76,6 @@
   /* Hero Section */
   .hero-section{
     flex-direction: column;
-    padding-top: 6rem;
   }
   .hero-text{
     display: flex;
