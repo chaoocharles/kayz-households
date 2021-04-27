@@ -1,0 +1,13 @@
+.rating{
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+}
+.rating span{
+    display: flex;
+    align-items: flex-start;
+    margin: 0.1rem;
+}
+.rating svg{
+    color: #ffed27
+}

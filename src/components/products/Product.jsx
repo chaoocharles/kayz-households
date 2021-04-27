@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { addToCart, decreaseCart } from "../../store/slices/productsSlice";
 
 import { Link } from "react-router-dom";
+import Rating from "../common/Rating";
 
 const Product = ({ product }) => {
   const dispatch = useDispatch();
@@ -10,9 +11,14 @@ const Product = ({ product }) => {
   return (
     <>
       <div className="product">
-        <img src={product.image} alt="" />
-        <p className="product-desc">{product.desc}</p>
-        <p className="product-name">{product.title}</p>
+        <Link to={`/product/${product.id}`}>
+          <img src={product.image} alt="" />
+        </Link>
+        <p className="product-desc">{product.summary}</p>
+        <Link to={`/product/${product.id}`}>
+          <p className="product-name">{product.title}</p>
+        </Link>
+        <Rating value={product.rating} text={`${product.numReviews} reviews`} />
         <p className="product-price">
           <sup>ksh</sup>
           {product.price}
