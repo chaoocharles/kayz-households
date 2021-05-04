@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/static/css/main.150418d1.chunk.css",
-    "main.js": "/static/js/main.0f154040.chunk.js",
-    "main.js.map": "/static/js/main.0f154040.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.c8c90cc9.js",
-    "runtime-main.js.map": "/static/js/runtime-main.c8c90cc9.js.map",
+    "main.css": "/static/css/main.2607a534.chunk.css",
+    "main.js": "/static/js/main.291904b4.chunk.js",
+    "main.js.map": "/static/js/main.291904b4.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.961f8a63.js",
+    "runtime-main.js.map": "/static/js/runtime-main.961f8a63.js.map",
     "static/css/2.ec226730.chunk.css": "/static/css/2.ec226730.chunk.css",
-    "static/js/2.d455f89e.chunk.js": "/static/js/2.d455f89e.chunk.js",
-    "static/js/2.d455f89e.chunk.js.map": "/static/js/2.d455f89e.chunk.js.map",
-    "static/js/3.23f527a4.chunk.js": "/static/js/3.23f527a4.chunk.js",
-    "static/js/3.23f527a4.chunk.js.map": "/static/js/3.23f527a4.chunk.js.map",
+    "static/js/2.6edf7bfd.chunk.js": "/static/js/2.6edf7bfd.chunk.js",
+    "static/js/2.6edf7bfd.chunk.js.map": "/static/js/2.6edf7bfd.chunk.js.map",
+    "static/js/3.832e9bb9.chunk.js": "/static/js/3.832e9bb9.chunk.js",
+    "static/js/3.832e9bb9.chunk.js.map": "/static/js/3.832e9bb9.chunk.js.map",
     "index.html": "/index.html",
     "static/css/2.ec226730.chunk.css.map": "/static/css/2.ec226730.chunk.css.map",
-    "static/css/main.150418d1.chunk.css.map": "/static/css/main.150418d1.chunk.css.map",
-    "static/js/2.d455f89e.chunk.js.LICENSE.txt": "/static/js/2.d455f89e.chunk.js.LICENSE.txt",
+    "static/css/main.2607a534.chunk.css.map": "/static/css/main.2607a534.chunk.css.map",
+    "static/js/2.6edf7bfd.chunk.js.LICENSE.txt": "/static/js/2.6edf7bfd.chunk.js.LICENSE.txt",
     "static/media/cups-2.ff01316d.jpg": "/static/media/cups-2.ff01316d.jpg",
     "static/media/cups-4.dead454a.jpg": "/static/media/cups-4.dead454a.jpg",
     "static/media/kayz-logo.3c436fac.png": "/static/media/kayz-logo.3c436fac.png",
@@ -22,10 +22,10 @@
     "static/media/pot-and-pans-set-3.24d2387d.jpg": "/static/media/pot-and-pans-set-3.24d2387d.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.c8c90cc9.js",
+    "static/js/runtime-main.961f8a63.js",
     "static/css/2.ec226730.chunk.css",
-    "static/js/2.d455f89e.chunk.js",
-    "static/css/main.150418d1.chunk.css",
-    "static/js/main.0f154040.chunk.js"
+    "static/js/2.6edf7bfd.chunk.js",
+    "static/css/main.2607a534.chunk.css",
+    "static/js/main.291904b4.chunk.js"
   ]
 }
