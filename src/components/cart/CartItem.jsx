@@ -1,20 +1,38 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { addToCart, decreaseCart, removeFromCart } from "../../store/slices/productsSlice";
+import {
+  addToCart,
+  decreaseCart,
+  removeFromCart,
+} from "../../store/slices/productsSlice";
 
 const CartItem = ({ cartItem }) => {
   const dispatch = useDispatch();
   return (
     <>
       <div className="cart-item">
-        <img src={cartItem.image} alt="" />
-        <p className="item-name">{cartItem.title}</p>
+        <Link
+          onClick={() => window.scrollTo(0, 0)}
+          to={`/product/${cartItem.id}`}
+        >
+          <img src={cartItem.image} alt="" />
+        </Link>
+        <Link
+          onClick={() => window.scrollTo(0, 0)}
+          to={`/product/${cartItem.id}`}
+        >
+          <p className="item-name">{cartItem.title}</p>
+        </Link>
         <p className="item-price">
           <span>ksh.</span>
           {cartItem.price}
         </p>
         <div className="change-amount">
-          <span className="decrease-icon" onClick = {() => dispatch(decreaseCart(cartItem))}>
+          <span
+            className="decrease-icon"
+            onClick={() => dispatch(decreaseCart(cartItem))}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="20"
@@ -43,7 +61,10 @@ const CartItem = ({ cartItem }) => {
             </svg>
           </span>
         </div>
-        <span className="remove-icon" onClick={() => dispatch(removeFromCart(cartItem))}>
+        <span
+          className="remove-icon"
+          onClick={() => dispatch(removeFromCart(cartItem))}
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="20"
