@@ -12,11 +12,13 @@ import {
 import Rating from "../common/Rating";
 import { addToCart } from "../../store/slices/productsSlice";
 import { useSelector, useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom"
 
 const ProductDetails = ({ match }) => {
   const dispatch = useDispatch();
-
+  const history = useHistory()
   const products = useSelector((state) => state.products.productItems);
+  const state = useSelector((state) => state);
   const product = products.find((product) => product.id == match.params.id);
 
   return (
@@ -67,7 +69,10 @@ const ProductDetails = ({ match }) => {
                   <Button
                     className="btn-block"
                     type="button"
-                    onClick={() => dispatch(addToCart(product))}
+                    onClick={() => {
+                      dispatch(addToCart(product));
+                      history.push("/cart")
+                    }}
                     disabled={product.countInStock === 0}
                   >
                     Add To Cart - <span>{product.cartQuantity}</span>
