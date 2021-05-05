@@ -1,21 +1,33 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import ProductItems from "../../components/products/ProductItems";
 import { toast } from "react-toastify";
+import axios from "axios";
+import { url, setHeaders } from "../../api";
 
 const initialState = {
   productItems: [],
   cartItems: [],
   cartTotalQuantity: 0,
   cartTotalAmount: 0,
+  status: null,
 };
+
+export const productsFetch = createAsyncThunk(
+  "products/productsFetch",
+  async () => {
+    try {
+      const response = await axios.get(`${url}/products`);
+      return response.data;
+    } catch (error) {
+      console.log(error);
+    }
+  }
+);
 
 const productsSlice = createSlice({
   name: "products",
   initialState,
   reducers: {
-    productsFetch(state, action) {
-      return { ...state, productItems: ProductItems };
-    },
     addToCart(state, action) {
       let tempProductItems = state.productItems.map((productItem) => {
         if (productItem.id === action.payload.id) {
@@ -33,10 +45,14 @@ const productsSlice = createSlice({
             nextCartItems[existingIndex] = {
               ...productItem,
             };
-            toast.success("🔼 Increased product quantity", { position: "bottom-right"});
+            toast.success("🔼 Increased product quantity", {
+              position: "bottom-right",
+            });
           } else {
             nextCartItems.push(productItem);
-            toast.success("➕ Product added to cart", { position: "bottom-right"});
+            toast.success("➕ Product added to cart", {
+              position: "bottom-right",
+            });
           }
 
           state.cartItems = nextCartItems;
@@ -66,7 +82,9 @@ const productsSlice = createSlice({
             }
 
             state.cartItems = nextCartItems;
-          toast.error("🔽 Decreased product quantity", { position: "bottom-right"});
+            toast.error("🔽 Decreased product quantity", {
+              position: "bottom-right",
+            });
           } else if (productItem.cartQuantity === 1) {
             productItem = {
               ...productItem,
@@ -79,7 +97,9 @@ const productsSlice = createSlice({
               (cartItem) => cartItem.id !== action.payload.id
             );
 
-            toast.error("✖ Product removed from cart", { position: "bottom-right"});
+            toast.error("✖ Product removed from cart", {
+              position: "bottom-right",
+            });
           }
         }
         return productItem;
@@ -99,7 +119,9 @@ const productsSlice = createSlice({
           state.cartItems = nextCartItems.filter(
             (cartItem) => cartItem.id !== action.payload.id
           );
-          toast.error("✖ Product removed from cart", { position: "bottom-right"});
+          toast.error("✖ Product removed from cart", {
+            position: "bottom-right",
+          });
         }
         return productItem;
       });
@@ -130,13 +152,23 @@ const productsSlice = createSlice({
       });
       state.productItems = productItemsTemp;
       state.cartItems = [];
-      toast.error("❌ Cart cleared", { position: "bottom-right"});
+      toast.error("❌ Cart cleared", { position: "bottom-right" });
+    },
+  },
+  extraReducers: {
+    [productsFetch.pending]: (state, action) => {
+      return { ...state, status: "pending" };
+    },
+    [productsFetch.fulfilled]: (state, action) => {
+      return { ...state, productItems: action.payload, status: "success" };
+    },
+    [productsFetch.rejected]: (state, action) => {
+      return { ...state, status: "rejected" };
     },
   },
 });
 
 export const {
-  productsFetch,
   addToCart,
   decreaseCart,
   getTotals,

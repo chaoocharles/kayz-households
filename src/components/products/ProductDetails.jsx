@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import {
   Container,
   Row,
@@ -12,7 +12,6 @@ import {
 import Rating from "../common/Rating";
 import { addToCart } from "../../store/slices/productsSlice";
 import { useSelector, useDispatch } from "react-redux";
-import { useHistory } from "react-router-dom"
 
 const ProductDetails = ({ match }) => {
   const dispatch = useDispatch();
@@ -71,7 +70,7 @@ const ProductDetails = ({ match }) => {
                     type="button"
                     onClick={() => {
                       dispatch(addToCart(product));
-                      history.push("/cart")
+                      history.push(`/cart`)
                     }}
                     disabled={product.countInStock === 0}
                   >
