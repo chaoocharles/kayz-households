@@ -45,12 +45,12 @@ const productsSlice = createSlice({
             nextCartItems[existingIndex] = {
               ...productItem,
             };
-            toast.success("🔼 Increased product quantity", {
+            toast.success("Increased product quantity", {
               position: "bottom-right",
             });
           } else {
             nextCartItems.push(productItem);
-            toast.success("➕ Product added to cart", {
+            toast.success("Product added to cart", {
               position: "bottom-right",
             });
           }
@@ -82,7 +82,7 @@ const productsSlice = createSlice({
             }
 
             state.cartItems = nextCartItems;
-            toast.error("🔽 Decreased product quantity", {
+            toast.error("Decreased product quantity", {
               position: "bottom-right",
             });
           } else if (productItem.cartQuantity === 1) {
@@ -97,7 +97,7 @@ const productsSlice = createSlice({
               (cartItem) => cartItem.id !== action.payload.id
             );
 
-            toast.error("✖ Product removed from cart", {
+            toast.error("Product removed from cart", {
               position: "bottom-right",
             });
           }
@@ -119,7 +119,7 @@ const productsSlice = createSlice({
           state.cartItems = nextCartItems.filter(
             (cartItem) => cartItem.id !== action.payload.id
           );
-          toast.error("✖ Product removed from cart", {
+          toast.error("Product removed from cart", {
             position: "bottom-right",
           });
         }
@@ -152,7 +152,7 @@ const productsSlice = createSlice({
       });
       state.productItems = productItemsTemp;
       state.cartItems = [];
-      toast.error("❌ Cart cleared", { position: "bottom-right" });
+      toast.error("Cart cleared", { position: "bottom-right" });
     },
   },
   extraReducers: {
@@ -168,12 +168,7 @@ const productsSlice = createSlice({
   },
 });
 
-export const {
-  addToCart,
-  decreaseCart,
-  getTotals,
-  removeFromCart,
-  clearCart,
-} = productsSlice.actions;
+export const { addToCart, decreaseCart, getTotals, removeFromCart, clearCart } =
+  productsSlice.actions;
 
 export default productsSlice.reducer;
