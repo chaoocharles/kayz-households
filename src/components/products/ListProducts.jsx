@@ -7,7 +7,7 @@ import "./Products.css";
 
 const ListProducts = () => {
   const products = useSelector((state) => state.products.productItems);
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getTotals());
@@ -20,14 +20,14 @@ const ListProducts = () => {
         <div className="products-grid">
           {products &&
             products.map((product) => (
-              <Product key={product.id} product={product} />
+              <Product key={product._id} product={product} />
             ))}
         </div>
         <h2 className="products-special-offer">Special Offer</h2>
         <div className="products-grid">
           {products &&
             products.map((product) => (
-              <Product key={product.id} product={product} />
+              <Product key={product._id} product={product} />
             ))}
         </div>
       </div>

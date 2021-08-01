@@ -11,11 +11,17 @@ const Product = ({ product }) => {
   return (
     <>
       <div className="product">
-        <Link onClick={() => window.scrollTo(0, 0)} to={`/product/${product.id}`}>
+        <Link
+          onClick={() => window.scrollTo(0, 0)}
+          to={`/product/${product._id}`}
+        >
           <img src={product.image} alt="" />
         </Link>
         <p className="product-desc">{product.summary}</p>
-        <Link onClick={() => window.scrollTo(0, 0)} to={`/product/${product.id}`}>
+        <Link
+          onClick={() => window.scrollTo(0, 0)}
+          to={`/product/${product._id}`}
+        >
           <p className="product-name">{product.title}</p>
         </Link>
         <Rating value={product.rating} text={`${product.numReviews} reviews`} />

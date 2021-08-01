@@ -30,7 +30,8 @@ const productsSlice = createSlice({
   reducers: {
     addToCart(state, action) {
       let tempProductItems = state.productItems.map((productItem) => {
-        if (productItem.id === action.payload.id) {
+        if (productItem._id === action.payload._id) {
+          console.log(productItem.cartQuantity);
           productItem = {
             ...productItem,
             cartQuantity: productItem.cartQuantity + 1,
@@ -38,7 +39,7 @@ const productsSlice = createSlice({
 
           const nextCartItems = [...state.cartItems];
           const existingIndex = nextCartItems.findIndex(
-            (item) => item.id === action.payload.id
+            (item) => item._id === action.payload._id
           );
 
           if (existingIndex >= 0) {
@@ -62,8 +63,9 @@ const productsSlice = createSlice({
       state.productItems = tempProductItems;
     },
     decreaseCart(state, action) {
+      console.log(state, action);
       let tempProductItems = state.productItems.map((productItem) => {
-        if (productItem.id === action.payload.id) {
+        if (productItem._id === action.payload._id) {
           if (productItem.cartQuantity > 1) {
             productItem = {
               ...productItem,
@@ -72,7 +74,7 @@ const productsSlice = createSlice({
 
             const nextCartItems = [...state.cartItems];
             const existingIndex = nextCartItems.findIndex(
-              (item) => item.id === action.payload.id
+              (item) => item._id === action.payload._id
             );
 
             if (existingIndex >= 0) {
@@ -94,7 +96,7 @@ const productsSlice = createSlice({
             const nextCartItems = [...state.cartItems];
 
             state.cartItems = nextCartItems.filter(
-              (cartItem) => cartItem.id !== action.payload.id
+              (cartItem) => cartItem._id !== action.payload._id
             );
 
             toast.error("Product removed from cart", {
@@ -108,7 +110,7 @@ const productsSlice = createSlice({
     },
     removeFromCart(state, action) {
       let tempProductItems = state.productItems.map((productItem) => {
-        if (productItem.id === action.payload.id) {
+        if (productItem._id === action.payload._id) {
           productItem = {
             ...productItem,
             cartQuantity: 0,
@@ -117,7 +119,7 @@ const productsSlice = createSlice({
           const nextCartItems = [...state.cartItems];
 
           state.cartItems = nextCartItems.filter(
-            (cartItem) => cartItem.id !== action.payload.id
+            (cartItem) => cartItem._id !== action.payload._id
           );
           toast.error("Product removed from cart", {
             position: "bottom-right",

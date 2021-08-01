@@ -15,10 +15,10 @@ import { useSelector, useDispatch } from "react-redux";
 
 const ProductDetails = ({ match }) => {
   const dispatch = useDispatch();
-  const history = useHistory()
+  const history = useHistory();
   const products = useSelector((state) => state.products.productItems);
   const state = useSelector((state) => state);
-  const product = products.find((product) => product.id == match.params.id);
+  const product = products.find((product) => product._id == match.params.id);
 
   return (
     <div className="custom-container">
@@ -70,7 +70,7 @@ const ProductDetails = ({ match }) => {
                     type="button"
                     onClick={() => {
                       dispatch(addToCart(product));
-                      history.push(`/cart`)
+                      history.push(`/cart`);
                     }}
                     disabled={product.countInStock === 0}
                   >

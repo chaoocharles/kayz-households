@@ -12,6 +12,7 @@ const CartContainer = () => {
   const { cartItems, cartTotalAmount, cartTotalQuantity } = useSelector(
     (state) => state.products
   );
+  console.log(cartItems);
   const dispatch = useDispatch();
 
   React.useEffect(() => {
@@ -49,7 +50,7 @@ const CartContainer = () => {
             <div className="cart-items">
               {cartItems &&
                 cartItems.map((cartItem) => (
-                  <CartItem key={cartItem.id} cartItem={cartItem} />
+                  <CartItem key={cartItem._id} cartItem={cartItem} />
                 ))}
             </div>
             <div className="cart-totals">
@@ -58,7 +59,7 @@ const CartContainer = () => {
                 <Link to="/cart/checkout" onClick={() => window.scrollTo(0, 0)}>
                   Proceed To Checkout
                 </Link>
-               </button>
+              </button>
               <button
                 className="clear-cart"
                 onClick={() => dispatch(clearCart())}
