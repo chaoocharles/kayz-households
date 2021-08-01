@@ -33,6 +33,7 @@ const Product = ({ product }) => {
           <button
             className="minus"
             onClick={() => dispatch(decreaseCart(product))}
+            disabled={product.countInStock === 0}
           >
             -
           </button>
@@ -53,7 +54,11 @@ const Product = ({ product }) => {
               <span className="count">{product.cartQuantity}</span>
             </button>
           </Link>
-          <button className="add" onClick={() => dispatch(addToCart(product))}>
+          <button
+            className="add"
+            onClick={() => dispatch(addToCart(product))}
+            disabled={product.countInStock === 0}
+          >
             +
           </button>
         </div>

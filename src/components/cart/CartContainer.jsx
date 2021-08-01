@@ -12,7 +12,6 @@ const CartContainer = () => {
   const { cartItems, cartTotalAmount, cartTotalQuantity } = useSelector(
     (state) => state.products
   );
-  console.log(cartItems);
   const dispatch = useDispatch();
 
   React.useEffect(() => {

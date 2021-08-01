@@ -1,4 +1,4 @@
-.custom-container{
+.custom-container {
   padding: 2rem 0;
 }
 .products-container {
@@ -50,7 +50,7 @@
   width: auto;
   border-radius: 9px;
 }
-.product a{
+.product a {
   text-decoration: none;
   color: black;
 }
@@ -84,6 +84,13 @@
   font-weight: 700;
   font-size: 20px;
 }
+.product-cta button[disabled] {
+  background: rgb(160, 209, 253);
+}
+.product-cta button[disabled]:hover {
+  background: rgb(160, 209, 253);
+  cursor: not-allowed;
+}
 .product-cta .minus {
   border-radius: 7px 0 0 7px;
 }
@@ -112,4 +119,3 @@
     border-radius: 9px;
   }
 }
-
