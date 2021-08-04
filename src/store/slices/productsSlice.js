@@ -1,8 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import ProductItems from "../../components/products/ProductItems";
 import { toast } from "react-toastify";
 import axios from "axios";
-import { url, setHeaders } from "../../api";
+import { url } from "../../api";
 
 const initialState = {
   productItems: [],

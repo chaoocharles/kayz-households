@@ -2,10 +2,18 @@ import React from "react";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import MyTextInput from "../common/MyTextInput";
+import { Redirect } from "react-router-dom";
 
-import "../common/forms.css"
+import "../common/forms.css";
+import { loginUser } from "../../store/slices/authSlice";
+import { useDispatch, useSelector } from "react-redux";
 
 const Login = () => {
+  const dispatch = useDispatch();
+  const auth = useSelector((state) => state.auth);
+
+  if (auth._id) return <Redirect to="/" />;
+
   return (
     <div className="form-container">
       <h2>Login To Your Account</h2>
@@ -18,16 +26,11 @@ const Login = () => {
           email: Yup.string()
             .email("Invalid email address")
             .required("Required"),
-            password: Yup.string()
-            .required('Required')
-            .matches(
-              /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*.#?&])[A-Za-z\d@$!%*.#?&]{6,}$/,
-              "Must Contain Atleast 6 Characters, One Uppercase, One Lowercase, One Number and One Special Case Character"
-            ),
+          password: Yup.string().required("Required"),
         })}
         onSubmit={(values, { setSubmitting }) => {
           setTimeout(() => {
-            alert(JSON.stringify(values, null, 2));
+            dispatch(loginUser(values));
             setSubmitting(false);
           }, 400);
         }}
