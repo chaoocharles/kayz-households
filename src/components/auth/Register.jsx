@@ -3,22 +3,26 @@ import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import MyTextInput from "../common/MyTextInput";
 
+import { registerUser } from "../../store/slices/authSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { Redirect } from "react-router-dom";
+
 const Register = () => {
+  const dispatch = useDispatch();
+  const auth = useSelector((state) => state.auth);
+
+  if (auth._id) return <Redirect to="/cart" />;
   return (
     <div className="form-container">
       <h2>Register For An Account</h2>
       <Formik
         initialValues={{
-          firstName: "",
-          lastName: "",
+          name: "",
           email: "",
           password: "",
         }}
         validationSchema={Yup.object({
-          firstName: Yup.string()
-            .max(15, "Must be 15 characters or less")
-            .required("Required"),
-          lastName: Yup.string()
+          name: Yup.string()
             .max(20, "Must be 20 characters or less")
             .required("Required"),
           email: Yup.string()
@@ -42,28 +46,21 @@ const Register = () => {
         })}
         onSubmit={(values, { setSubmitting }) => {
           setTimeout(() => {
-            alert(JSON.stringify(values, null, 2));
+            dispatch(registerUser(values));
             setSubmitting(false);
           }, 400);
         }}
       >
         <Form>
           <MyTextInput
-            label="First Name"
-            name="firstName"
+            label="Name"
+            name="name"
             type="text"
-            placeholder="Jane"
+            placeholder="Jane Doe"
           />
 
           <MyTextInput
-            label="Last Name"
-            name="lastName"
-            type="text"
-            placeholder="Doe"
-          />
-
-          <MyTextInput
-            label="Email Address"
+            label="Email"
             name="email"
             type="email"
             placeholder="jane@gmail.com"

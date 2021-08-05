@@ -2,11 +2,12 @@ import React from "react";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import MyTextInput from "../common/MyTextInput";
-import { Redirect } from "react-router-dom";
 
-import "../common/forms.css";
+import { Redirect } from "react-router-dom";
 import { loginUser } from "../../store/slices/authSlice";
 import { useDispatch, useSelector } from "react-redux";
+
+import "../common/forms.css";
 
 const Login = () => {
   const dispatch = useDispatch();

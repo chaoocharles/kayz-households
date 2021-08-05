@@ -29,6 +29,27 @@ export const loginUser = createAsyncThunk("auth/loginUser", async (values) => {
   }
 });
 
+export const registerUser = createAsyncThunk(
+  "auth/registerUser",
+  async (values) => {
+    try {
+      const token = await axios.post(`${url}/auth/register`, {
+        name: values.name,
+        email: values.email,
+        password: values.password,
+      });
+      localStorage.setItem("token", token.data);
+      return token.data;
+    } catch (error) {
+      console.log(error.response);
+
+      toast.error(error.response?.data, {
+        position: toast.POSITION.BOTTOM_RIGHT,
+      });
+    }
+  }
+);
+
 const authSlice = createSlice({
   name: "auth",
   initialState,
@@ -85,6 +106,28 @@ const authSlice = createSlice({
       } else return state;
     },
     [loginUser.rejected]: (state, action) => {
+      return { ...state, status: "rejected" };
+    },
+    [registerUser.pending]: (state, action) => {
+      return { ...state, status: "pending" };
+    },
+    [registerUser.fulfilled]: (state, action) => {
+      if (action.payload) {
+        toast("Welcome...", {
+          position: toast.POSITION.BOTTOM_RIGHT,
+        });
+        const user = jwtDecode(action.payload);
+        return {
+          ...state,
+          token: action.token,
+          name: user.name,
+          email: user.email,
+          _id: user._id,
+          status: "success",
+        };
+      } else return state;
+    },
+    [registerUser.rejected]: (state, action) => {
       return { ...state, status: "rejected" };
     },
   },
