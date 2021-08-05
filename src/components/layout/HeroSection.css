@@ -30,11 +30,6 @@
   font-size: 50px;
   font-weight: 700;
 }
-.hero-text .special-offer {
-  font-size: 50px;
-  font-weight: 700;
-  margin-top: 0.9rem;
-}
 .hero-text .off {
   font-size: 35px;
   font-weight: 500;
@@ -74,20 +69,16 @@
 
 @media (max-width: 768px) {
   /* Hero Section */
-  .hero-section{
+  .hero-section {
     flex-direction: column;
   }
-  .hero-text{
+  .hero-text {
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
   .hero-text .new-arrivals {
     font-size: 45px;
-  }
-  .hero-text .special-offer {
-    font-size: 45px;
-    margin-top: 0.3rem;
   }
   .hero-text .off {
     font-size: 30px;
@@ -100,9 +91,6 @@
 @media (max-width: 480px) {
   /* Hero Section */
   .hero-text .new-arrivals {
-    font-size: 35px;
-  }
-  .hero-text .special-offer {
     font-size: 35px;
   }
   .hero-text .off {

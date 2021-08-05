@@ -48,6 +48,21 @@ const authSlice = createSlice({
         };
       } else return state;
     },
+    logoutUser(state, action) {
+      localStorage.removeItem("token");
+
+      toast("Goodbye...", {
+        position: toast.POSITION.BOTTOM_RIGHT,
+      });
+      return {
+        ...state,
+        token: null,
+        name: null,
+        email: null,
+        _id: null,
+        status: null,
+      };
+    },
   },
   extraReducers: {
     [loginUser.pending]: (state, action) => {
@@ -75,6 +90,6 @@ const authSlice = createSlice({
   },
 });
 
-export const { loadUser } = authSlice.actions;
+export const { loadUser, logoutUser } = authSlice.actions;
 
 export default authSlice.reducer;

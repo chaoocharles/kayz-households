@@ -1,23 +1,13 @@
 import React, { useEffect } from "react";
-import { Link, useHistory } from "react-router-dom";
-import {
-  Container,
-  Row,
-  Col,
-  Image,
-  ListGroup,
-  Card,
-  Button,
-} from "react-bootstrap";
+import { Link } from "react-router-dom";
+import { Container, Row, Col, Image, ListGroup, Card } from "react-bootstrap";
 import Rating from "../common/Rating";
 import { addToCart, productsFetch } from "../../store/slices/productsSlice";
 import { useSelector, useDispatch } from "react-redux";
 
 const ProductDetails = ({ match }) => {
   const dispatch = useDispatch();
-  const history = useHistory();
   const products = useSelector((state) => state.products.productItems);
-  const state = useSelector((state) => state);
   const product = products.find((product) => product._id == match.params.id);
 
   useEffect(() => {

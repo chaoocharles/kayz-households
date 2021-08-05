@@ -12,7 +12,7 @@ const Login = () => {
   const dispatch = useDispatch();
   const auth = useSelector((state) => state.auth);
 
-  if (auth._id) return <Redirect to="/" />;
+  if (auth._id) return <Redirect to="/cart" />;
 
   return (
     <div className="form-container">

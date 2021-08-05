@@ -1,39 +1,20 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
+import { NavDropdown } from "react-bootstrap";
+import { useDispatch, useSelector } from "react-redux";
+import { logoutUser } from "../../../store/slices/authSlice";
 
 const NavLinks = () => {
+  const auth = useSelector((state) => state.auth);
+  const dispatch = useDispatch();
+  const history = useHistory();
+
+  const handleLogout = () => {
+    dispatch(logoutUser());
+    history.push("/");
+  };
   return (
     <>
-      <Link to="/login" onClick={() => window.scrollTo(0, 0)}>
-        <span className="center-items-v">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
-            fill="currentColor"
-            className="bi bi-person-fill"
-            viewBox="0 0 16 16"
-          >
-            <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
-          </svg>
-          <span>Login</span>
-        </span>
-      </Link>
-      <Link to="/register" onClick={() => window.scrollTo(0, 0)}>
-        <span className="center-items-v">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
-            fill="currentColor"
-            className="bi bi-arrow-right-circle-fill"
-            viewBox="0 0 16 16"
-          >
-            <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z" />
-          </svg>
-          <span>Register</span>
-        </span>
-      </Link>
       <Link to="/orders" onClick={() => window.scrollTo(0, 0)}>
         <span className="center-items-v">
           <svg
@@ -65,6 +46,47 @@ const NavLinks = () => {
           <span>Admin</span>
         </span>
       </Link>
+      {auth._id ? (
+        <NavDropdown title={auth.name} id="username">
+          <Link to="/profile">
+            <NavDropdown.Item>Profile</NavDropdown.Item>
+          </Link>
+          <NavDropdown.Item onClick={handleLogout}>Logout</NavDropdown.Item>
+        </NavDropdown>
+      ) : (
+        <>
+          <Link to="/login" onClick={() => window.scrollTo(0, 0)}>
+            <span className="center-items-v">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                className="bi bi-person-fill"
+                viewBox="0 0 16 16"
+              >
+                <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+              </svg>
+              <span>Login</span>
+            </span>
+          </Link>
+          <Link to="/register" onClick={() => window.scrollTo(0, 0)}>
+            <span className="center-items-v">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                className="bi bi-arrow-right-circle-fill"
+                viewBox="0 0 16 16"
+              >
+                <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z" />
+              </svg>
+              <span>Register</span>
+            </span>
+          </Link>
+        </>
+      )}
     </>
   );
 };

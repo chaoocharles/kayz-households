@@ -1,5 +1,4 @@
 nav {
-  /* background: rgb(185, 1, 1); */
   background: rgb(53, 53, 53);
   width: 100vw;
   padding: 1rem 4rem;
@@ -11,6 +10,10 @@ nav {
   top: 0;
   z-index: 98;
 }
+.nav-links {
+  display: flex;
+  align-items: center;
+}
 .nav-links a,
 .cart a,
 .social-links a {
@@ -21,7 +24,6 @@ nav {
   display: inline-block;
   text-transform: uppercase;
   position: relative;
-  padding-bottom: 4px;
 }
 .nav-links a:hover,
 .cart a:hover,
@@ -29,7 +31,6 @@ nav {
   color: rgb(220, 220, 220);
   text-decoration: none;
 }
-
 .nav-links a:before,
 .cart a::before,
 .social-links a::before {
@@ -76,9 +77,20 @@ nav {
 .logo img {
   height: 3.7rem;
   width: auto;
-  margin-right: 0.7rem ;
+  margin-right: 0.7rem;
 }
-
+.dropdown-menu a {
+  color: rgb(51, 51, 51);
+  text-transform: capitalize;
+  margin-right: 0;
+  display: block;
+}
+.dropdown-menu a:hover {
+  color: rgb(63, 63, 63);
+  text-transform: capitalize;
+  margin-right: 0;
+  display: block;
+}
 @media (max-width: 768px) {
   /* Nav */
   .nav-links {
