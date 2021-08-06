@@ -12,7 +12,6 @@ import Login from "./components/auth/Login";
 import Register from "./components/auth/Register";
 import Checkout from "./components/cart/Checkout";
 import AdminDashboard from "./components/admin/AdminDashboard";
-import Orders from "./components/orders/Orders";
 import ProductDetails from "./components/products/ProductDetails";
 import NotFound from "./components/NotFound/NotFound";
 import UserProfile from "./components/users/UserProfile";
@@ -27,7 +26,6 @@ function App() {
           <Switch>
             <Route path="/product/:id" component={ProductDetails} />
             <Route path="/admin-dashboard" component={AdminDashboard} />
-            <Route path="/orders" component={Orders} />
             <Route path="/login" component={Login} />
             <Route path="/register" component={Register} />
             <Route path="/cart/checkout" component={Checkout} />

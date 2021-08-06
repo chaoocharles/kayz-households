@@ -1,11 +1,13 @@
 import React from "react";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
-import { Button, Row, Col } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
 import MyTextInput from "../common/MyTextInput";
+
+import { updateProfile } from "../../store/slices/authSlice";
 
 import "./UserProfile.css";
 
@@ -20,7 +22,13 @@ const UserProfile = () => {
       <Row>
         <Col md={3}>
           <h2>Your Profile</h2>
-          <p>id: {auth._id}</p>
+          <p>
+            <b>id:</b> <i>{auth._id}</i>
+            <br />
+            <b>name:</b> <i>{auth.name}</i> <br />
+            <b>email:</b> <i>{auth.email}</i>
+          </p>
+          <h3>Update Profile</h3>
           <Formik
             initialValues={{
               name: "",
@@ -28,12 +36,8 @@ const UserProfile = () => {
               password: "",
             }}
             validationSchema={Yup.object({
-              name: Yup.string()
-                .max(20, "Must be 20 characters or less")
-                .required("Required"),
-              email: Yup.string()
-                .email("Invalid email address")
-                .required("Required"),
+              name: Yup.string().max(20, "Must be 20 characters or less"),
+              email: Yup.string().email("Invalid email address"),
               password: Yup.string()
                 .required("Required")
                 .matches(
@@ -52,7 +56,7 @@ const UserProfile = () => {
             })}
             onSubmit={(values, { setSubmitting }) => {
               setTimeout(() => {
-                dispatch();
+                dispatch(updateProfile(values));
                 setSubmitting(false);
               }, 400);
             }}
@@ -76,14 +80,14 @@ const UserProfile = () => {
                 label="Password"
                 name="password"
                 type="password"
-                placeholder="6%8ej9"
+                placeholder="Enter Password"
               />
 
               <MyTextInput
                 label="Confirm Password"
                 name="confirmPassword"
                 type="password"
-                placeholder="6%8ej9"
+                placeholder="Cornfirm Password"
               />
 
               <button type="submit">Update</button>
