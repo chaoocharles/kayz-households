@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, useHistory } from "react-router-dom";
 import { NavDropdown } from "react-bootstrap";
+import { LinkContainer } from "react-router-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { logoutUser } from "../../../store/slices/authSlice";
 
@@ -48,9 +49,9 @@ const NavLinks = () => {
       </Link>
       {auth._id ? (
         <NavDropdown title={auth.name} id="username">
-          <Link to="/profile">
+          <LinkContainer to="/profile">
             <NavDropdown.Item>Profile</NavDropdown.Item>
-          </Link>
+          </LinkContainer>
           <NavDropdown.Item onClick={handleLogout}>Logout</NavDropdown.Item>
         </NavDropdown>
       ) : (

@@ -1,0 +1,9 @@
+.profile-container {
+  width: 95vw;
+  min-height: 80vh;
+  padding: 2rem 0;
+  margin: auto;
+}
+.profile-container form {
+  width: 100%;
+}

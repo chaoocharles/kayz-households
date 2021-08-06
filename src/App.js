@@ -15,6 +15,7 @@ import AdminDashboard from "./components/admin/AdminDashboard";
 import Orders from "./components/orders/Orders";
 import ProductDetails from "./components/products/ProductDetails";
 import NotFound from "./components/NotFound/NotFound";
+import UserProfile from "./components/users/UserProfile";
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
             <Route path="/register" component={Register} />
             <Route path="/cart/checkout" component={Checkout} />
             <Route path="/cart" component={CartContainer} />
+            <Route path="/profile" component={UserProfile} />
             <Route path="/not-found" component={NotFound} />
             <Route path="/" exact component={Home} />
             <Redirect to="/not-found" />
