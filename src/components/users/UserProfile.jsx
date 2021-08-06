@@ -24,16 +24,13 @@ const UserProfile = () => {
           <h2>Your Profile</h2>
           <p>
             <b>id:</b> <i>{auth._id}</i>
-            <br />
-            <b>name:</b> <i>{auth.name}</i> <br />
-            <b>email:</b> <i>{auth.email}</i>
           </p>
-          <h3>Update Profile</h3>
           <Formik
             initialValues={{
-              name: "",
-              email: "",
+              name: auth?.name,
+              email: auth?.email,
               password: "",
+              confirmPassword: "",
             }}
             validationSchema={Yup.object({
               name: Yup.string().max(20, "Must be 20 characters or less"),

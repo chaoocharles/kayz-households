@@ -20,6 +20,7 @@ const Register = () => {
           name: "",
           email: "",
           password: "",
+          confirmPassword: "",
         }}
         validationSchema={Yup.object({
           name: Yup.string()

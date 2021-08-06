@@ -8,6 +8,7 @@ const initialState = {
   token: localStorage.getItem("token"),
   name: null,
   email: null,
+  isAdmin: null,
   _id: null,
   status: null,
 };
@@ -88,6 +89,7 @@ const authSlice = createSlice({
           token,
           name: user.name,
           email: user.email,
+          isAdmin: user.isAdmin,
           _id: user._id,
           status: "success",
         };
@@ -104,6 +106,7 @@ const authSlice = createSlice({
         token: null,
         name: null,
         email: null,
+        isAdmin: null,
         _id: null,
         status: null,
       };
@@ -124,6 +127,7 @@ const authSlice = createSlice({
           token: action.token,
           name: user.name,
           email: user.email,
+          isAdmin: user.isAdmin,
           _id: user._id,
           status: "success",
         };
@@ -146,6 +150,7 @@ const authSlice = createSlice({
           token: action.token,
           name: user.name,
           email: user.email,
+          isAdmin: user.isAdmin,
           _id: user._id,
           status: "success",
         };
@@ -168,6 +173,7 @@ const authSlice = createSlice({
           token: action.token,
           name: user.name,
           email: user.email,
+          isAdmin: user.isAdmin,
           _id: user._id,
           status: "success",
         };

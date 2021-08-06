@@ -7,11 +7,13 @@ import { Provider } from "react-redux";
 import { configureStore } from "@reduxjs/toolkit";
 import productsReducer, { productsFetch } from "./store/slices/productsSlice";
 import authReducer, { loadUser } from "./store/slices/authSlice";
+import checkoutReducer from "./store/slices/checkoutSlice";
 
 const store = configureStore({
   reducer: {
     products: productsReducer,
     auth: authReducer,
+    checkout: checkoutReducer,
   },
 });
 

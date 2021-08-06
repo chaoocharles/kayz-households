@@ -4,25 +4,34 @@ import * as Yup from "yup";
 import MyTextInput from "../common/MyTextInput";
 import MySelect from "../common/MySelect";
 
+import { Redirect } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { saveShippingAddress } from "../../store/slices/checkoutSlice";
+import CheckoutSteps from "./CheckoutSteps";
+
 const Checkout = () => {
-  const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
+  const auth = useSelector((state) => state.auth);
+  const address = useSelector((state) => state.checkout.shippingAddress);
+  const dispatch = useDispatch();
+
+  if (!auth._id) return <Redirect to="/login" />;
+
+  const phoneRegExp =
+    /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
   return (
     <div className="form-container">
+      <CheckoutSteps step1 />
       <h2>Checkout</h2>
-      <h4>1/2. Address Details</h4>
+      <h4>Address Details</h4>
       <Formik
         initialValues={{
-          firstName: "",
-          lastName: "",
-          phone: "",
-          deliveryAddress: "",
-          region: "",
+          name: address?.name,
+          phone: address?.phone,
+          deliveryAddress: address?.deliveryAddress,
+          region: address?.region,
         }}
         validationSchema={Yup.object({
-          firstName: Yup.string()
-            .max(15, "Must be 15 characters or less")
-            .required("Required"),
-          lastName: Yup.string()
+          name: Yup.string()
             .max(20, "Must be 20 characters or less")
             .required("Required"),
           phone: Yup.string()
@@ -37,24 +46,17 @@ const Checkout = () => {
         })}
         onSubmit={(values, { setSubmitting }) => {
           setTimeout(() => {
-            alert(JSON.stringify(values, null, 2));
+            dispatch(saveShippingAddress(values));
             setSubmitting(false);
           }, 400);
         }}
       >
         <Form>
           <MyTextInput
-            label="First Name"
-            name="firstName"
+            label="Name"
+            name="name"
             type="text"
-            placeholder="Jane"
-          />
-
-          <MyTextInput
-            label="Last Name"
-            name="lastName"
-            type="text"
-            placeholder="Doe"
+            placeholder="Jane Doe"
           />
 
           <MyTextInput

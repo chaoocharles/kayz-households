@@ -12,6 +12,7 @@ const CartContainer = () => {
   const { cartItems, cartTotalAmount, cartTotalQuantity } = useSelector(
     (state) => state.products
   );
+  const auth = useSelector((state) => state.auth);
   const dispatch = useDispatch();
 
   React.useEffect(() => {
@@ -55,9 +56,18 @@ const CartContainer = () => {
             <div className="cart-totals">
               <h3>Sub-Total: KSH.{cartTotalAmount}</h3>
               <button className="toCheckout">
-                <Link to="/cart/checkout" onClick={() => window.scrollTo(0, 0)}>
-                  Proceed To Checkout
-                </Link>
+                {auth._id ? (
+                  <Link
+                    to="/cart/checkout"
+                    onClick={() => window.scrollTo(0, 0)}
+                  >
+                    Proceed To Checkout
+                  </Link>
+                ) : (
+                  <Link to="/login" onClick={() => window.scrollTo(0, 0)}>
+                    Login To Proceed
+                  </Link>
+                )}
               </button>
               <button
                 className="clear-cart"
