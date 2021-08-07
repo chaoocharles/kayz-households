@@ -22,11 +22,12 @@ const PlaceOrder = () => {
   const addDecimals = (num) => {
     return (Math.round(num * 100) / 100).toFixed(2);
   };
-  const shipping = cartItems.length === 0 ? addDecimals(0) : addDecimals(100);
+  const shippingPrice =
+    cartItems.length === 0 ? addDecimals(0) : addDecimals(100);
   const taxPrice = addDecimals(Number(0.07 * cartTotalAmount).toFixed(2));
   const totalPrice = (
     Number(cartTotalAmount) +
-    Number(shipping) +
+    Number(shippingPrice) +
     Number(taxPrice)
   ).toFixed(2);
 
@@ -99,7 +100,7 @@ const PlaceOrder = () => {
               <ListGroup.Item>
                 <Row>
                   <Col>Shipping</Col>
-                  <Col>Ksh. {shipping}</Col>
+                  <Col>Ksh. {shippingPrice}</Col>
                 </Row>
               </ListGroup.Item>
               <ListGroup.Item>
