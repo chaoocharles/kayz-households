@@ -1,18 +1,32 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Button, Row, Col, ListGroup, Image, Card } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
+import { createOrder } from "../../store/slices/orderSlice";
 import CheckoutSteps from "./CheckoutSteps";
 
 const PlaceOrder = () => {
   const { cartItems, cartTotalAmount, cartTotalQuantity } = useSelector(
     (state) => state.products
   );
-  console.log(cartItems);
   const auth = useSelector((state) => state.auth);
   const address = useSelector((state) => state.checkout.shippingAddress);
   const payment = useSelector((state) => state.checkout.payment);
+  const orderCreate = useSelector((state) => state.orders);
+
+  const { order, status } = orderCreate;
+  console.log(orderCreate);
+
+  const dispatch = useDispatch();
+  const history = useHistory();
+
+  useEffect(() => {
+    if (status === "success") {
+      // history.push(`/orders/${order._id}`);
+    }
+    // eslint-disable-next-line
+  }, [history, status]);
 
   if (!auth._id) return <Redirect to="/login" />;
   if (!address.deliveryAddress) return <Redirect to="/cart/shipping-details" />;
@@ -25,13 +39,27 @@ const PlaceOrder = () => {
   const shippingPrice =
     cartItems.length === 0 ? addDecimals(0) : addDecimals(100);
   const taxPrice = addDecimals(Number(0.07 * cartTotalAmount).toFixed(2));
-  const totalPrice = (
-    Number(cartTotalAmount) +
-    Number(shippingPrice) +
-    Number(taxPrice)
-  ).toFixed(2);
+  const totalPrice = addDecimals(
+    (
+      Number(cartTotalAmount) +
+      Number(shippingPrice) +
+      Number(taxPrice)
+    ).toFixed(2)
+  );
 
-  const handlePlaceOrder = () => {};
+  const handlePlaceOrder = () => {
+    dispatch(
+      createOrder({
+        orderItems: cartItems,
+        shippingAddress: address,
+        paymentMethod: payment.paymentMethod,
+        itemsPrice: cartTotalAmount,
+        shippingPrice,
+        taxPrice,
+        totalPrice,
+      })
+    );
+  };
 
   return (
     <>

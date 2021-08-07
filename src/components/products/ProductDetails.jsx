@@ -8,11 +8,12 @@ import { useSelector, useDispatch } from "react-redux";
 const ProductDetails = ({ match }) => {
   const dispatch = useDispatch();
   const products = useSelector((state) => state.products.productItems);
-  const product = products.find((product) => product._id == match.params.id);
+  const product = products.find((product) => product._id === match.params.id);
 
   useEffect(() => {
     dispatch(productsFetch());
-  }, []);
+  }, [dispatch]);
+
   return (
     <div className="custom-container">
       <Container>
