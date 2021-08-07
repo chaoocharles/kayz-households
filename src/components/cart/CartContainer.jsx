@@ -58,7 +58,7 @@ const CartContainer = () => {
               <button className="toCheckout">
                 {auth._id ? (
                   <Link
-                    to="/cart/checkout"
+                    to="/cart/shipping-details"
                     onClick={() => window.scrollTo(0, 0)}
                   >
                     Proceed To Checkout

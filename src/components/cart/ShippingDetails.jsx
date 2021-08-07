@@ -4,15 +4,16 @@ import * as Yup from "yup";
 import MyTextInput from "../common/MyTextInput";
 import MySelect from "../common/MySelect";
 
-import { Redirect } from "react-router-dom";
+import { Redirect, useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { saveShippingAddress } from "../../store/slices/checkoutSlice";
 import CheckoutSteps from "./CheckoutSteps";
 
-const Checkout = () => {
+const ShippingDetails = () => {
   const auth = useSelector((state) => state.auth);
   const address = useSelector((state) => state.checkout.shippingAddress);
   const dispatch = useDispatch();
+  const history = useHistory();
 
   if (!auth._id) return <Redirect to="/login" />;
 
@@ -21,8 +22,7 @@ const Checkout = () => {
   return (
     <div className="form-container">
       <CheckoutSteps step1 />
-      <h2>Checkout</h2>
-      <h4>Address Details</h4>
+      <h2>Shipping Details</h2>
       <Formik
         initialValues={{
           name: address?.name,
@@ -41,12 +41,13 @@ const Checkout = () => {
             .required("Required")
             .min(4, "Must be 4 characters or more"),
           region: Yup.string()
-            .oneOf(["nairobi", "nakuru", "nyeri", "other"], "Invalid Region")
+            .oneOf(["Nairobi", "Nakuru", "Nyeri", "Other"], "Invalid Region")
             .required("Required"),
         })}
         onSubmit={(values, { setSubmitting }) => {
           setTimeout(() => {
             dispatch(saveShippingAddress(values));
+            history.push("/cart/payment-method");
             setSubmitting(false);
           }, 400);
         }}
@@ -74,16 +75,16 @@ const Checkout = () => {
           />
           <MySelect label="Region" name="region">
             <option value="">Select Region</option>
-            <option value="nairobi">Nairobi</option>
-            <option value="nakuru">Nakuru</option>
-            <option value="nyeri">Nyeri</option>
-            <option value="other">Other</option>
+            <option value="Nairobi">Nairobi</option>
+            <option value="Nakuru">Nakuru</option>
+            <option value="Nyeri">Nyeri</option>
+            <option value="Other">Other</option>
           </MySelect>
-          <button type="submit">Submit</button>
+          <button type="submit">Next</button>
         </Form>
       </Formik>
     </div>
   );
 };
 
-export default Checkout;
+export default ShippingDetails;

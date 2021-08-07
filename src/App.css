@@ -15,3 +15,6 @@
 .content-container {
   padding-top: 5.5rem;
 }
+.content-container .row {
+  margin: auto;
+}

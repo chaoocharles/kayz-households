@@ -14,13 +14,13 @@ const CartItem = ({ cartItem }) => {
       <div className="cart-item">
         <Link
           onClick={() => window.scrollTo(0, 0)}
-          to={`/product/${cartItem.id}`}
+          to={`/product/${cartItem._id}`}
         >
           <img src={cartItem.image} alt="" />
         </Link>
         <Link
           onClick={() => window.scrollTo(0, 0)}
-          to={`/product/${cartItem.id}`}
+          to={`/product/${cartItem._id}`}
         >
           <p className="item-name">{cartItem.title}</p>
         </Link>
