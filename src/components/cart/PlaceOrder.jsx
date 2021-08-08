@@ -16,7 +16,6 @@ const PlaceOrder = () => {
   const orderCreate = useSelector((state) => state.orders);
 
   const { order, status } = orderCreate;
-  console.log(orderCreate);
 
   const dispatch = useDispatch();
   const history = useHistory();

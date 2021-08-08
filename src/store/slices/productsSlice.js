@@ -3,11 +3,25 @@ import { toast } from "react-toastify";
 import axios from "axios";
 import { url } from "../../api";
 
+const productsLocalStorage = localStorage.getItem("products")
+  ? JSON.parse(localStorage.getItem("products"))
+  : {};
+
+console.log(productsLocalStorage);
+
 const initialState = {
-  productItems: [],
-  cartItems: [],
-  cartTotalQuantity: 0,
-  cartTotalAmount: 0,
+  productItems: productsLocalStorage.productItems
+    ? productsLocalStorage.productItems
+    : [],
+  cartItems: productsLocalStorage.cartItems
+    ? productsLocalStorage.cartItems
+    : [],
+  cartTotalQuantity: productsLocalStorage.cartTotalQuantity
+    ? productsLocalStorage.cartTotalQuantity
+    : 0,
+  cartTotalAmount: productsLocalStorage.cartTotalAmount
+    ? productsLocalStorage.cartTotalAmount
+    : 0,
   status: null,
 };
 
@@ -30,7 +44,6 @@ const productsSlice = createSlice({
     addToCart(state, action) {
       let tempProductItems = state.productItems.map((productItem) => {
         if (productItem._id === action.payload._id) {
-          console.log(productItem.cartQuantity);
           productItem = {
             ...productItem,
             cartQuantity: productItem.cartQuantity + 1,
@@ -60,9 +73,9 @@ const productsSlice = createSlice({
         return productItem;
       });
       state.productItems = tempProductItems;
+      localStorage.setItem("products", JSON.stringify(state));
     },
     decreaseCart(state, action) {
-      console.log(state, action);
       let tempProductItems = state.productItems.map((productItem) => {
         if (productItem._id === action.payload._id) {
           if (productItem.cartQuantity > 1) {
@@ -106,6 +119,7 @@ const productsSlice = createSlice({
         return productItem;
       });
       state.productItems = tempProductItems;
+      localStorage.setItem("products", JSON.stringify(state));
     },
     removeFromCart(state, action) {
       let tempProductItems = state.productItems.map((productItem) => {
@@ -127,6 +141,7 @@ const productsSlice = createSlice({
         return productItem;
       });
       state.productItems = tempProductItems;
+      localStorage.setItem("products", JSON.stringify(state));
     },
     getTotals(state, action) {
       let { total, quantity } = state.cartItems.reduce(
@@ -154,17 +169,22 @@ const productsSlice = createSlice({
       state.productItems = productItemsTemp;
       state.cartItems = [];
       toast.error("Cart cleared", { position: "bottom-right" });
+      localStorage.setItem("products", JSON.stringify(state));
     },
   },
   extraReducers: {
     [productsFetch.pending]: (state, action) => {
-      return { ...state, status: "pending" };
+      state.status = "pending";
+      localStorage.setItem("products", JSON.stringify(state));
     },
     [productsFetch.fulfilled]: (state, action) => {
-      return { ...state, productItems: action.payload, status: "success" };
+      state.productItems = action.payload;
+      state.status = "success";
+      localStorage.setItem("products", JSON.stringify(state));
     },
     [productsFetch.rejected]: (state, action) => {
-      return { ...state, status: "rejected" };
+      state.status = "rejected";
+      localStorage.setItem("products", JSON.stringify(state));
     },
   },
 });
