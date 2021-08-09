@@ -175,16 +175,16 @@ const productsSlice = createSlice({
   extraReducers: {
     [productsFetch.pending]: (state, action) => {
       state.status = "pending";
-      localStorage.setItem("products", JSON.stringify(state));
+      // localStorage.setItem("products", JSON.stringify(state));
     },
     [productsFetch.fulfilled]: (state, action) => {
       state.productItems = action.payload;
       state.status = "success";
-      localStorage.setItem("products", JSON.stringify(state));
+      // localStorage.setItem("products", JSON.stringify(state));
     },
     [productsFetch.rejected]: (state, action) => {
       state.status = "rejected";
-      localStorage.setItem("products", JSON.stringify(state));
+      // localStorage.setItem("products", JSON.stringify(state));
     },
   },
 });

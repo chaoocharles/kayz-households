@@ -28,6 +28,22 @@ export const createOrder = createAsyncThunk(
   }
 );
 
+export const getOrderDetails = createAsyncThunk(
+  "order/getOrderDetails",
+  async (id) => {
+    try {
+      const order = await axios.post(`${url}/orders/${id}`, setHeaders());
+      return order.data;
+    } catch (error) {
+      console.log(error.response);
+
+      toast.error(error.response?.data, {
+        position: toast.POSITION.BOTTOM_RIGHT,
+      });
+    }
+  }
+);
+
 const orderSlice = createSlice({
   name: "order",
   initialState,
@@ -50,6 +66,21 @@ const orderSlice = createSlice({
     },
     [createOrder.rejected]: (state, action) => {
       return { ...state, status: "rejected" };
+    },
+    [getOrderDetails.rejected]: (state, action) => {
+      return { ...state, status: "rejected" };
+    },
+    [getOrderDetails.pending]: (state, action) => {
+      return { ...state, status: "pending" };
+    },
+    [getOrderDetails.fulfilled]: (state, action) => {
+      if (action.payload) {
+        return {
+          ...state,
+          order: action.payload,
+          status: "success",
+        };
+      } else return state;
     },
   },
 });
