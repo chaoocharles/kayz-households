@@ -7,6 +7,7 @@ import {
   Image,
   Card,
   Spinner,
+  Alert,
 } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router";
@@ -22,11 +23,10 @@ const OrderDetails = ({ match }) => {
   const { order, getOrderStatus } = orderDetails;
 
   const dispatch = useDispatch();
-  const history = useHistory();
 
   useEffect(() => {
     dispatch(getOrderDetails(orderId));
-  }, []);
+  }, [dispatch, orderId]);
 
   if (!auth._id) return <Redirect to="/login" />;
 
@@ -42,16 +42,36 @@ const OrderDetails = ({ match }) => {
               <ListGroup.Item>
                 <h2>Shipping Details</h2>
                 <p>
+                  <strong>Name:</strong> {order.user.name}
+                  <br />
+                  <strong>Email</strong>:{" "}
+                  <a href={`mailto: ${order.user.email}`}>{order.user.email}</a>
+                </p>
+                <p>
                   <strong>Phone:</strong> {order.shippingAddress.phone} <br />
                   <strong>Address:</strong>{" "}
                   {order.shippingAddress.deliveryAddress},{" "}
                   {order.shippingAddress.region}
                 </p>
+                {order.isDelivered ? (
+                  <Alert variant="success">
+                    Delivered on {order.deliveredAt}
+                  </Alert>
+                ) : (
+                  <Alert variant="danger">Not Delivered</Alert>
+                )}
               </ListGroup.Item>
               <ListGroup.Item>
                 <h2>Payment Method</h2>
                 <p>
                   <strong>Method:</strong> {order.paymentMethod} <br />
+                </p>
+                <p>
+                  {order.isPaid ? (
+                    <Alert variant="success">Paid on {order.paidAt}</Alert>
+                  ) : (
+                    <Alert variant="danger">Not Paid</Alert>
+                  )}
                 </p>
               </ListGroup.Item>
               <ListGroup.Item>
@@ -96,7 +116,7 @@ const OrderDetails = ({ match }) => {
                 </ListGroup.Item>
                 <ListGroup.Item>
                   <Row>
-                    <Col>{order.orderItems.length} Items</Col>
+                    <Col>Items</Col>
                     <Col>Ksh. {order.itemsPrice}</Col>
                   </Row>
                 </ListGroup.Item>

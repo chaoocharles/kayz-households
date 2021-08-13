@@ -7,6 +7,7 @@ const initialState = {
   order: null,
   getOrderStatus: null,
   createOrderStatus: null,
+  payOrderStatus: null,
 };
 
 export const createOrder = createAsyncThunk(
@@ -45,10 +46,40 @@ export const getOrderDetails = createAsyncThunk(
   }
 );
 
+export const payOrder = createAsyncThunk(
+  "order/payOrder",
+  async (orderId, paymentResult) => {
+    try {
+      const order = await axios.put(
+        `${url}/orders/${orderId}/pay`,
+        paymentResult,
+        setHeaders()
+      );
+      return order.data;
+    } catch (error) {
+      console.log(error.response);
+
+      toast.error(error.response?.data, {
+        position: toast.POSITION.BOTTOM_RIGHT,
+      });
+    }
+  }
+);
+
 const orderSlice = createSlice({
   name: "order",
   initialState,
-  reducers: {},
+  reducers: {
+    payOrderReset(state, action) {
+      return {
+        ...state,
+        order: null,
+        getOrderStatus: null,
+        createOrderStatus: null,
+        payOrderStatus: null,
+      };
+    },
+  },
   extraReducers: {
     [createOrder.pending]: (state, action) => {
       return { ...state, createOrderStatus: "pending", getOrderStatus: null };
@@ -85,7 +116,23 @@ const orderSlice = createSlice({
     [getOrderDetails.rejected]: (state, action) => {
       return { ...state, getOrderStatus: "rejected", createOrderStatus: null };
     },
+    [payOrder.pending]: (state, action) => {
+      return { ...state, payOrderStatus: "pending" };
+    },
+    [payOrder.fulfilled]: (state, action) => {
+      if (action.payload) {
+        return {
+          ...state,
+          payOrderStatus: "success",
+        };
+      } else return state;
+    },
+    [payOrder.rejected]: (state, action) => {
+      return { payOrderStatus: "rejected" };
+    },
   },
 });
+
+export const { payOrderReset } = productsSlice.actions;
 
 export default orderSlice.reducer;
