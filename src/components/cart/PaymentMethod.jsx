@@ -34,7 +34,7 @@ const PaymentMethod = () => {
         onSubmit={(values, { setSubmitting }) => {
           setTimeout(() => {
             dispatch(savePaymentMethod(values));
-            history.push("/cart/place-order");
+            history.push("/orders/place-order");
             setSubmitting(false);
           }, 400);
         }}

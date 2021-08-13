@@ -5,7 +5,8 @@ import { url, setHeaders } from "../../api";
 
 const initialState = {
   order: null,
-  status: null,
+  getOrderStatus: null,
+  createOrderStatus: null,
 };
 
 export const createOrder = createAsyncThunk(
@@ -32,7 +33,7 @@ export const getOrderDetails = createAsyncThunk(
   "order/getOrderDetails",
   async (id) => {
     try {
-      const order = await axios.post(`${url}/orders/${id}`, setHeaders());
+      const order = await axios.get(`${url}/orders/${id}`, setHeaders());
       return order.data;
     } catch (error) {
       console.log(error.response);
@@ -50,7 +51,7 @@ const orderSlice = createSlice({
   reducers: {},
   extraReducers: {
     [createOrder.pending]: (state, action) => {
-      return { ...state, status: "pending" };
+      return { ...state, createOrderStatus: "pending", getOrderStatus: null };
     },
     [createOrder.fulfilled]: (state, action) => {
       if (action.payload) {
@@ -60,27 +61,29 @@ const orderSlice = createSlice({
         return {
           ...state,
           order: action.payload,
-          status: "success",
+          createOrderStatus: "success",
+          getOrderStatus: null,
         };
       } else return state;
     },
     [createOrder.rejected]: (state, action) => {
-      return { ...state, status: "rejected" };
-    },
-    [getOrderDetails.rejected]: (state, action) => {
-      return { ...state, status: "rejected" };
+      return { ...state, createOrderStatus: "rejected", getOrderStatus: null };
     },
     [getOrderDetails.pending]: (state, action) => {
-      return { ...state, status: "pending" };
+      return { ...state, getOrderStatus: "pending", createOrderStatus: null };
     },
     [getOrderDetails.fulfilled]: (state, action) => {
       if (action.payload) {
         return {
           ...state,
           order: action.payload,
-          status: "success",
+          getOrderStatus: "success",
+          createOrderStatus: null,
         };
       } else return state;
+    },
+    [getOrderDetails.rejected]: (state, action) => {
+      return { ...state, getOrderStatus: "rejected", createOrderStatus: null };
     },
   },
 });

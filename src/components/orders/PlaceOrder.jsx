@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router";
 import { Link, useHistory } from "react-router-dom";
 import { createOrder } from "../../store/slices/orderSlice";
-import CheckoutSteps from "./CheckoutSteps";
+import CheckoutSteps from "../cart/CheckoutSteps";
 
 const PlaceOrder = () => {
   const { cartItems, cartTotalAmount, cartTotalQuantity } = useSelector(
@@ -15,17 +15,17 @@ const PlaceOrder = () => {
   const payment = useSelector((state) => state.checkout.payment);
   const orderCreate = useSelector((state) => state.orders);
 
-  const { order, status } = orderCreate;
+  const { order, createOrderStatus } = orderCreate;
 
   const dispatch = useDispatch();
   const history = useHistory();
 
   useEffect(() => {
-    if (status === "success") {
-      // history.push(`/orders/${order._id}`);
+    if (createOrderStatus === "success") {
+      history.push(`/orders/${order._id}`);
     }
     // eslint-disable-next-line
-  }, [history, status]);
+  }, [history, createOrderStatus]);
 
   if (!auth._id) return <Redirect to="/login" />;
   if (!address.deliveryAddress) return <Redirect to="/cart/shipping-details" />;

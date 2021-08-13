@@ -7,8 +7,6 @@ const productsLocalStorage = localStorage.getItem("products")
   ? JSON.parse(localStorage.getItem("products"))
   : {};
 
-console.log(productsLocalStorage);
-
 const initialState = {
   productItems: productsLocalStorage.productItems
     ? productsLocalStorage.productItems
